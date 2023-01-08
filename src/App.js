@@ -10,4 +10,6 @@ function App() {
 
 const Container = styled.div``;
 
+const Main = styled.div``;
+
 export default App;
