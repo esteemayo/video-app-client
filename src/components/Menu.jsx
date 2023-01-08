@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import HomeIcon from '@mui/icons-material/Home';
+
 import logo from '../img/logo.png';
 
 const Menu = () => {
