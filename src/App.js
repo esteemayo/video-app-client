@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 function App() {
   return (
-    <div>
+    <Container>
       <h1>Youtube Clone</h1>
-    </div>
+    </Container>
   );
 }
+
+const Container = styled.div``;
 
 export default App;
