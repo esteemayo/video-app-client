@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
+import Navbar from 'components/Navbar';
+
 function App() {
   return (
     <Container>
-      <h1>Youtube Clone</h1>
+      <Navbar />
     </Container>
   );
 }
