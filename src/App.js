@@ -9,6 +9,9 @@ function App() {
       <Navbar />
       <Main>
         <Sidebar />
+        <Wrapper>
+          cards
+        </Wrapper>
       </Main>
     </Container>
   );
