@@ -7,8 +7,9 @@ import Sidebar from 'components/Sidebar';
 function App() {
   return (
     <Container>
-      <Navbar />
+      <Menu />
       <Main>
+        <Navbar />
         <Sidebar />
         <Wrapper>
           cards
@@ -18,7 +19,9 @@ function App() {
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+`;
 
 const Main = styled.div``;
 
