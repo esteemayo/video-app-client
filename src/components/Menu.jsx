@@ -17,6 +17,7 @@ const Menu = () => {
 const Container = styled.div`
   flex: 1;
   height: 100vh;
+  font-size: 1.4rem;
   background-color: #202020;
   color: #fff;
 `;
@@ -29,6 +30,8 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
 `;
 
 const Img = styled.img`
