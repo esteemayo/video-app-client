@@ -6,6 +6,8 @@ const Menu = () => {
   );
 };
 
-const Container = styled
+const Container = styled.div`
+  flex: 1;
+`;
 
 export default Menu;
