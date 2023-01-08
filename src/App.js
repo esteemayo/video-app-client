@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
 import Sidebar from 'components/Sidebar';
 
