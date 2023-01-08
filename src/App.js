@@ -18,4 +18,6 @@ const Container = styled.div``;
 
 const Main = styled.div``;
 
+const Wrapper = styled.div``;
+
 export default App;
