@@ -7,7 +7,7 @@ const Menu = () => {
       <Wrapper>
         <Logo>
           <Img src={logo} alt='logo' />
-          Youtube
+          YouTube
         </Logo>
       </Wrapper>
     </Container>
