@@ -31,7 +31,7 @@ const Home = ({ type }) => {
 
       default:
         break;
-    }
+    };
 
     return () => dispatch(reset());
   }, [dispatch, type]);
