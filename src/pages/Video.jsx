@@ -90,9 +90,18 @@ const Info = styled.span`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Buttons = styled.div``;
+const Buttons = styled.div`
+  display: flex;
+  gap: 2rem;
+  color: ${({ theme }) => theme.text};
+`;
 
-const Button = styled.div``;
+const Button = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+`;
 
 const Content = styled.div`
   flex: 5;
