@@ -4,6 +4,8 @@ import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
+import Comments from 'components/Comments';
+
 const Video = () => {
   return (
     <Container>
@@ -55,7 +57,7 @@ const Video = () => {
           <Subscribe>SUBSCRIBE</Subscribe>
         </Channel>
         <Hr />
-        {/* <Comments/> */}
+        <Comments />
       </Content>
       <Recommendation>Recommendation</Recommendation>
     </Container>
