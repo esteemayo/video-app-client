@@ -141,6 +141,7 @@ const Item = styled.div`
   align-items: center;
   gap: 2rem;
   cursor: pointer;
+  padding: 0.75rem 0;
 
   &:hover {
     background-color: ${({ theme }) => theme.soft};
@@ -155,17 +156,18 @@ const Hr = styled.hr`
 const Login = styled.div``;
 
 const Button = styled.button`
+  display: inline-block;
+  font-weight: 500;
   padding: 0.5rem 1.5rem;
   background-color: transparent;
-  border: 1px solid #3ea6ff;
   color: #3ea6ff;
-  border-radius: 3px;
-  font-weight: 500;
+  border: 1px solid #3ea6ff;
+  border-radius: 0.3rem;
   margin-top: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
 `;
 
 const Title = styled.h2`
