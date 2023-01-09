@@ -111,11 +111,9 @@ const Menu = () => {
 const Container = styled.div`
   flex: 1;
   height: 100%;
-  font-size: 1.4rem;
-  background-color: #202020;
-  color: #fff;
-  /* color: ${({ theme }) => theme.text}; */
-  /* background-color: ${({ theme }) => theme.bgLighter}; */
+  font-size: 1.4rem;;
+  background-color: ${({ theme }) => theme.bgLighter};
+  color: ${({ theme }) => theme.text};
   position: sticky;
   top: 0;
 `;
@@ -151,7 +149,6 @@ const Item = styled.div`
 const Hr = styled.hr`
   margin: 1.5rem 0;
   border: 0.5px solid ${({ theme }) => theme.soft};
-  border: 0.5px solid #373737;
 `;
 
 const Login = styled.div``;
