@@ -30,11 +30,13 @@ const Container = styled.div`
   width: 36rem;
   margin-bottom: ${({ type }) => type === 'sm' ? '1rem' : '4.5rem'};
   display: ${({ type }) => type === 'sm' && 'flex'};
+  gap: 1rem;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: ${({ type }) => type === 'sm' ? '10rem' : '20.2rem'};
+  height: ${({ type }) => type === 'sm' ? '12rem' : '20.2rem'};
 `;
 
 const Details = styled.div`
