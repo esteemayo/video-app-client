@@ -23,10 +23,17 @@ const Navbar = () => {
 };
 
 const Container = styled.div`
-  
+  height: 5.6rem;
+  position: sticky;
+  top: 0;
+  background-color: ${({ theme }) => theme.bgLighter};
 `;
+
 const Wrapper = styled.div`
-  
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
 `;
 const Search = styled.div`
   
