@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getRandomVideos } from 'services/videoService';
 
-const fetchRandomVideos = createAsyncThunk(
+export const fetchRandomVideos = createAsyncThunk(
   'videos/getRandomVideos',
   async (_, { rejectWithValue }) => {
     try {
