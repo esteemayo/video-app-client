@@ -42,11 +42,12 @@ const Image = styled.img`
 
 const Details = styled.div`
   display: flex;
-  margin-top: 1.6rem;
+  margin-top: ${({ type }) => type !== 'sm' && '1.6rem'};
   gap: 1.2rem;
 `;
 
 const ChannelImage = styled.img`
+  display: ${({ type }) => type === 'sm' && 'none'};
   width: 3.6rem;
   height:3.6rem;
   border-radius: 50%;
