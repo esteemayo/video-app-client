@@ -19,7 +19,7 @@ import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightne
 
 import logo from '../img/logo.png';
 
-const Menu = () => {
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
