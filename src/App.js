@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
-import { Home, SharedLayout, SignIn, Video } from 'pages';
 import { darkTheme, lightTheme } from 'utils/Theme';
+import { Home, SharedLayout, SignIn, Video } from 'pages';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
