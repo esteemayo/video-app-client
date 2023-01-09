@@ -110,7 +110,7 @@ const Menu = () => {
 
 const Container = styled.div`
   flex: 1;
-  height: 100vh;
+  height: 100%;
   font-size: 1.4rem;
   background-color: #202020;
   color: #fff;
