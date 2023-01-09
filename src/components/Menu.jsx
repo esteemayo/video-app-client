@@ -61,7 +61,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </Link>
         </Login>
         <Hr />
-        <Title>BEST OF LAMATUBE</Title>
+        <Title>BEST OF YOUTUBE</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
