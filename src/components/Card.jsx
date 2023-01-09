@@ -1,18 +1,21 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = () => {
   return (
-    <Container>
-      <Image src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow' />
-      <Details>
-        <ChannelImage src='https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo' />
-        <Texts>
-          <Title>Test Video</Title>
-          <ChannelName>Lama Dev</ChannelName>
-          <Info>660,908 views • 1 day ago</Info>
-        </Texts>
-      </Details>
-    </Container>
+    <Link to='/videos/test'>
+      <Container>
+        <Image src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow' />
+        <Details>
+          <ChannelImage src='https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo' />
+          <Texts>
+            <Title>Test Video</Title>
+            <ChannelName>Lama Dev</ChannelName>
+            <Info>660,908 views • 1 day ago</Info>
+          </Texts>
+        </Details>
+      </Container>
+    </Link>
   );
 };
 
