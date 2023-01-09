@@ -11,6 +11,10 @@ const Menu = () => {
           <Img src={logo} alt='logo' />
           YouTube
         </Logo>
+        <Item>
+          <HomeIcon />
+          Home
+        </Item>
       </Wrapper>
     </Container>
   );
@@ -38,6 +42,13 @@ const Logo = styled.div`
 
 const Img = styled.img`
   height: 2.5rem;
+`;
+
+const Item = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
 `;
 
 export default Menu;
