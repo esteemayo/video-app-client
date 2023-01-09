@@ -1,30 +1,24 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Card from 'components/Card';
+import { fetchRandomVideos, reset } from 'features/video/videoSlice';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { videos } = useSelector((state) => ({ ...state.videos }));
+
+  useEffect(() => {
+    dispatch(fetchRandomVideos());
+    return () => dispatch(reset());
+  }, [dispatch]);
+
   return (
     <Container>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {videos?.map((item) => {
+        return <Card key={item._id} {...item} />
+      })}
     </Container>
   );
 };
