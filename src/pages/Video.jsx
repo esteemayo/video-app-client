@@ -124,7 +124,7 @@ const Channel = styled.div`
 
 const ChannelInfo = styled.div`
   display: flex;
-  gap: 20rem;
+  gap: 2rem;
 `;
 
 const Image = styled.img`
