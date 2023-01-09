@@ -72,9 +72,7 @@ const Container = styled.div`
   gap: 2.4rem;
 `;
 
-const VideoWrapper = styled.div`
-  
-`;
+const VideoWrapper = styled.div``;
 
 const Title = styled.h1`
   font-weight: 400;
