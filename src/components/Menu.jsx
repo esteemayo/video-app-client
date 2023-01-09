@@ -101,7 +101,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
-          {darkMode ? 'Dark Mode' : 'Light Mode'}
+          {darkMode ? 'Light' : 'Dark'} Mode
         </Item>
       </Wrapper>
     </Container>
