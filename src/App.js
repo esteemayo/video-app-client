@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
+import { darkTheme } from 'utils/Theme';
 import { Home, SharedLayout } from 'pages';
 
 function App() {
