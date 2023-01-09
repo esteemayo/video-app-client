@@ -138,6 +138,7 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+  text-transform: capitalize;
   cursor: pointer;
   padding: 0.75rem 0;
 
@@ -156,6 +157,7 @@ const Login = styled.div``;
 const Button = styled.button`
   display: inline-block;
   font-weight: 500;
+  text-transform: uppercase;
   padding: 0.5rem 1.5rem;
   background-color: transparent;
   color: #3ea6ff;
