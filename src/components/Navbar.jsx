@@ -34,6 +34,18 @@ const Search = styled.div`
 
 const Input = styled.input``;
 
-const Button = styled.button``;
+const Button = styled.button`
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #3ea6ff;
+  border: 1px solid #3ea6ff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
 
 export default Navbar;
