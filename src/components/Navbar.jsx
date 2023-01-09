@@ -5,8 +5,35 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <Container>
+      <Wrapper>
+        <Search>
+          <Input type='search' placeholder='Search' />
+          <SearchOutlinedIcon />
+        </Search>
+        <Link to='signin' style={{ textDecoration: 'none' }}>
+          <Button>
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+        </Link>
+      </Wrapper>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  
+`;
+const Wrapper = styled.div`
+  
+`;
+const Search = styled.div`
+  
+`;
+
+const Input = styled.input``;
+
+const Button = styled.button``;
 
 export default Navbar;
