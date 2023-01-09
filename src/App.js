@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
-import { Home, SharedLayout, SignIn } from 'pages';
+import { Home, SharedLayout, SignIn, Video } from 'pages';
 import { darkTheme, lightTheme } from 'utils/Theme';
 
 function App() {
@@ -22,6 +22,9 @@ function App() {
                 <Route path='/' element={<SharedLayout />}>
                   <Route index element={<Home />} />
                   <Route path='signin' element={<SignIn />} />
+                  <Route path='video'>
+                    <Route path=':id' element={<Video />} />
+                  </Route>
                 </Route>
                 cards
               </Routes>
