@@ -6,7 +6,7 @@ export const fetchRandomVideos = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await getRandomVideos();
-      console.log(data);
+      return data.videos;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
