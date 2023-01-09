@@ -8,6 +8,8 @@ import { darkTheme } from 'utils/Theme';
 import { Home, SharedLayout } from 'pages';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Container>
