@@ -35,7 +35,7 @@ export const videoSlice = createSlice({
       .addCase(fetchRandomVideos.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.videos.push(payload);
+        state.videos = payload;
       })
       .addCase(fetchRandomVideos.rejected, (state, { payload }) => {
         state.isLoading = false
