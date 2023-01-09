@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = () => {
   return (
-    <Link to='/videos/test' style={{ textDecoration: 'none' }}>
+    <Link to='/video/test' style={{ textDecoration: 'none' }}>
       <Container>
         <Image src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow' />
         <Details>
