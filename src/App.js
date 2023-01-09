@@ -8,13 +8,20 @@ import { Home, SharedLayout } from 'pages';
 function App() {
   return (
     <Container>
-      <Menu />
-      <Main>
-        <Navbar />
-        <Wrapper>
-          cards
-        </Wrapper>
-      </Main>
+      <Router>
+        <Menu />
+        <Main>
+          <Navbar />
+          <Wrapper>
+            <Routes>
+              <Route path='/' element={<SharedLayout />}>
+                <Route index element={<Home />} />
+              </Route>
+              cards
+            </Routes>
+          </Wrapper>
+        </Main>
+      </Router>
     </Container>
   );
 }
