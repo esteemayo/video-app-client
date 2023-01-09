@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ type }) => {
   return (
     <Link to='/video/test' style={{ textDecoration: 'none' }}>
-      <Container>
+      <Container type={type}>
         <Image
           src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow'
           alt=''
