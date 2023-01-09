@@ -27,7 +27,8 @@ const Card = ({ type }) => {
 
 const Container = styled.div`
   width: 36rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: ${({ type }) => type === 'sm' ? '1rem' : '4.5rem'};
+  display: ${({ type }) => type === 'sm' && 'flex'};
 `;
 
 const Image = styled.img`
