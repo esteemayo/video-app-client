@@ -8,3 +8,5 @@ const logger = {
   init,
   log,
 };
+
+export default logger;
