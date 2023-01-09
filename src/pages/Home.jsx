@@ -4,16 +4,41 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Card from 'components/Card';
-import { fetchRandomVideos, reset } from 'features/video/videoSlice';
+import {
+  fetchRandomVideos,
+  fetchSubscribeVideos,
+  fetchTrendingVideos,
+  reset,
+} from 'features/video/videoSlice';
 
-const Home = () => {
+const Home = ({ type }) => {
   const dispatch = useDispatch();
-  const { videos } = useSelector((state) => ({ ...state.videos }));
+  const { videos, isError } = useSelector((state) => ({ ...state.videos }));
 
   useEffect(() => {
-    dispatch(fetchRandomVideos());
+    switch (type) {
+      case 'random':
+        dispatch(fetchRandomVideos());
+        return;
+
+      case 'trend':
+        dispatch(fetchTrendingVideos());
+        return;
+
+      case 'subscriptions':
+        dispatch(fetchSubscribeVideos());
+        return;
+
+      default:
+        break;
+    }
+
     return () => dispatch(reset());
-  }, [dispatch]);
+  }, [dispatch, type]);
+
+  useEffect(() => {
+    isError && toast.error(isError);
+  }, [isError]);
 
   return (
     <Container>
