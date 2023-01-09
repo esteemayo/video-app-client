@@ -8,6 +8,10 @@ export const getVideos = () => http.get(apiEndpoint);
 
 export const getRandomVideos = () => http.get(`${apiEndpoint}/random`);
 
+export const getTrendingVideos = () => http.get(`${apiEndpoint}/trend`);
+
+export const getSubscribedVideos = () => http.get(`${apiEndpoint}/subscribe`);
+
 export const getVideoById = (videoId) => http.get(videoUrl(videoId));
 
 export const getVideoBySlug = (slug) =>
