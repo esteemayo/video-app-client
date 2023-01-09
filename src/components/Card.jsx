@@ -28,7 +28,7 @@ const Card = ({ type }) => {
 };
 
 const Container = styled.div`
-  width: 36rem;
+  width: ${({ type }) => type !== 'sm' && '36rem'};
   margin-bottom: ${({ type }) => type === 'sm' ? '1rem' : '4.5rem'};
   display: ${({ type }) => type === 'sm' && 'flex'};
   gap: 1rem;
@@ -38,12 +38,15 @@ const Container = styled.div`
 const Image = styled.img`
   width: 100%;
   height: ${({ type }) => type === 'sm' ? '12rem' : '20.2rem'};
+  background-color: #999;
+  flex: 1;
 `;
 
 const Details = styled.div`
   display: flex;
   margin-top: ${({ type }) => type !== 'sm' && '1.6rem'};
   gap: 1.2rem;
+  flex: 1;
 `;
 
 const ChannelImage = styled.img`
