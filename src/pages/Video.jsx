@@ -71,11 +71,24 @@ const VideoWrapper = styled.div`
   
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.text};
+`;
 
-const Details = styled.div``;
+const Details = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-const Info = styled.span``;
+const Info = styled.span`
+  color: ${({ theme }) => theme.textSoft};
+`;
 
 const Buttons = styled.div``;
 
