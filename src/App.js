@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
@@ -8,22 +8,24 @@ import { Home, SharedLayout } from 'pages';
 
 function App() {
   return (
-    <Container>
-      <Router>
-        <Menu />
-        <Main>
-          <Navbar />
-          <Wrapper>
-            <Routes>
-              <Route path='/' element={<SharedLayout />}>
-                <Route index element={<Home />} />
-              </Route>
-              cards
-            </Routes>
-          </Wrapper>
-        </Main>
-      </Router>
-    </Container>
+    <ThemeProvider theme={darkTheme}>
+      <Container>
+        <Router>
+          <Menu />
+          <Main>
+            <Navbar />
+            <Wrapper>
+              <Routes>
+                <Route path='/' element={<SharedLayout />}>
+                  <Route index element={<Home />} />
+                </Route>
+                cards
+              </Routes>
+            </Wrapper>
+          </Main>
+        </Router>
+      </Container>
+    </ThemeProvider>
   );
 }
 
