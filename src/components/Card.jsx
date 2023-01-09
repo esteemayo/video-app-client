@@ -6,6 +6,7 @@ const Card = ({ type }) => {
     <Link to='/video/test' style={{ textDecoration: 'none' }}>
       <Container type={type}>
         <Image
+          type={type}
           src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow'
           alt=''
         />
