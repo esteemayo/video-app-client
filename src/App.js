@@ -45,6 +45,8 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.bg};
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  padding: 2.2rem 9.6rem;
+`;
 
 export default App;
