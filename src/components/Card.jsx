@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Card = ({ type }) => {
   return (
     <Link to='/video/test' style={{ textDecoration: 'none' }}>
       <Container>
