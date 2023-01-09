@@ -38,6 +38,7 @@ const Button = styled.button`
   display: inline-block;
   padding: 0.5rem 1.5rem;
   font-weight: 500;
+  text-transform: uppercase;
   background-color: transparent;
   color: #3ea6ff;
   border: 1px solid #3ea6ff;
