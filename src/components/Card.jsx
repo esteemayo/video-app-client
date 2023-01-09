@@ -34,7 +34,7 @@ const Container = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 20.2rem;
+  height: ${({ type }) => type === 'sm' ? '10rem' : '20.2rem'};
 `;
 
 const Details = styled.div`
