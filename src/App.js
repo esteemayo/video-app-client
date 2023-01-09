@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
-import { darkTheme } from 'utils/Theme';
 import { Home, SharedLayout } from 'pages';
+import { darkTheme, lightTheme } from 'utils/Theme';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
         <Router>
           <Menu />
@@ -38,6 +38,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   flex: 7;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Wrapper = styled.div``;
