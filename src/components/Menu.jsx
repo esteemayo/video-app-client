@@ -148,20 +148,20 @@ const Item = styled.div`
 `;
 
 const Hr = styled.hr`
-  margin: 15px 0px;
+  margin: 1.5rem 0;
   border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 const Login = styled.div``;
 
 const Button = styled.button`
-  padding: 5px 15px;
+  padding: 0.5rem 1.5rem;
   background-color: transparent;
   border: 1px solid #3ea6ff;
   color: #3ea6ff;
   border-radius: 3px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,10 +169,10 @@ const Button = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
   color: #aaaaaa;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 export default Menu;
