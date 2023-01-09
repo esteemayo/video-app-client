@@ -32,14 +32,35 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 100%;
   padding: 0 2rem;
-`;
-const Search = styled.div`
-  
+  position: relative;
 `;
 
-const Input = styled.input``;
+const Search = styled.div`
+  width: 40%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+`;
+
+const Input = styled.input`
+  border: none;
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  font-family: inherit;
+  background-color: transparent;
+  caret-color: #ccc;
+`;
 
 const Button = styled.button`
   display: inline-block;
