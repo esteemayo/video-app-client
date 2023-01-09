@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
-import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
+import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
+import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 const Video = () => {
   return (
@@ -134,13 +134,33 @@ const ChannelDetail = styled.div`
   color: ${({ theme }) => theme.text};
 `;
 
-const ChannelName = styled.span``;
+const ChannelName = styled.span`
+  font-weight: 500;
+`;
 
-const ChannelCounter = styled.span``;
+const ChannelCounter = styled.span`
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.textSoft};
+  font-size: 1.2rem;
+`;
 
-const Description = styled.p``;
+const Description = styled.p`
+  font-size: 1.4rem;
+`;
 
-const Subscribe = styled.button``;
+const Subscribe = styled.button`
+  border: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #cc1a00;
+  color: #fff;
+  border-radius: 0.3rem;
+  height: max-content;
+  padding: 1rem 2rem;
+  cursor: pointer;
+`;
 
 const Recommendation = styled.div`
   flex: 2;
