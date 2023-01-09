@@ -101,7 +101,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
-          Dark Mode
+          {darkMode ? 'Dark Mode' : 'Light Mode'}
         </Item>
       </Wrapper>
     </Container>
@@ -171,6 +171,7 @@ const Button = styled.button`
 const Title = styled.h2`
   font-size: 1.4rem;
   font-weight: 500;
+  text-transform: uppercase;
   color: #aaaaaa;
   margin-bottom: 2rem;
 `;
