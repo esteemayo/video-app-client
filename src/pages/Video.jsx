@@ -107,15 +107,32 @@ const Content = styled.div`
   flex: 5;
 `;
 
-const Hr = styled.hr``;
+const Hr = styled.hr`
+  margin: 1.5rem 0;
+  border: 0.5px solid ${({ theme }) => theme.soft};
+`;
 
-const Channel = styled.div``;
+const Channel = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-const ChannelInfo = styled.div``;
+const ChannelInfo = styled.div`
+  display: flex;
+  gap: 20rem;
+`;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+`;
 
-const ChannelDetail = styled.div``;
+const ChannelDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.text};
+`;
 
 const ChannelName = styled.span``;
 
