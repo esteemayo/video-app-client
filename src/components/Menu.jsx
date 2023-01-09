@@ -23,12 +23,12 @@ const Menu = () => {
   return (
     <Container>
       <Wrapper>
-        {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-        </Link> */}
-        <Logo>
-          <Img src={logo} alt='logo' />
-          YouTube
-        </Logo>
+        <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Logo>
+            <Img src={logo} alt='logo' />
+            YouTube
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon />
           Home
@@ -53,12 +53,12 @@ const Menu = () => {
         <Hr />
         <Login>
           Sign in to like videos, comment, and subscribe.
-          {/* <Link to="signin" style={{ textDecoration: "none" }}>
-          </Link> */}
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
+          <Link to='signin' style={{ textDecoration: 'none' }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>
         </Login>
         <Hr />
         <Title>BEST OF LAMATUBE</Title>
@@ -142,14 +142,14 @@ const Item = styled.div`
   gap: 2rem;
   cursor: pointer;
 
-  /* &:hover {
+  &:hover {
     background-color: ${({ theme }) => theme.soft};
-  } */
+  }
 `;
 
 const Hr = styled.hr`
   margin: 15px 0px;
-  /* border: 0.5px solid ${({ theme }) => theme.soft}; */
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 const Login = styled.div``;
