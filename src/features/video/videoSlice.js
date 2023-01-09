@@ -1,11 +1,35 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getRandomVideos } from 'services/videoService';
+import * as videoAPI from 'services/videoService';
 
 export const fetchRandomVideos = createAsyncThunk(
   'videos/getRandomVideos',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await getRandomVideos();
+      const { data } = await videoAPI.getRandomVideos();
+      return data.videos;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
+export const fetchTrendingVideos = createAsyncThunk(
+  'videos/getTrendingVideos',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.getTrendingVideos();
+      return data.videos;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
+export const fetchSubscribeVideos = createAsyncThunk(
+  'videos/getSubscribeVideos',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.getSubscribedVideos();
       return data.videos;
     } catch (err) {
       const message = err.response.data;
@@ -38,6 +62,32 @@ export const videoSlice = createSlice({
         state.videos = payload;
       })
       .addCase(fetchRandomVideos.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload;
+      })
+      .addCase(fetchTrendingVideos.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchTrendingVideos.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.videos = payload;
+      })
+      .addCase(fetchTrendingVideos.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload;
+      })
+      .addCase(fetchSubscribeVideos.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchSubscribeVideos.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.videos = payload;
+      })
+      .addCase(fetchSubscribeVideos.rejected, (state, { payload }) => {
         state.isLoading = false
         state.isSuccess = false;
         state.isError = payload;
