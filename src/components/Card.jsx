@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Card = () => {
   return (
-    <Link to='/videos/test'>
+    <Link to='/videos/test' style={{ textDecoration: 'none' }}>
       <Container>
         <Image src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow' />
         <Details>
