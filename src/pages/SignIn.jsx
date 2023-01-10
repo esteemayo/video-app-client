@@ -2,8 +2,11 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const SignIn = () => {
+  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  const [passwordConfirm, setPasswordConfirm] = useState(null);
 
   return (
     <Container>
@@ -22,9 +25,21 @@ const SignIn = () => {
         />
         <Button>Sign in</Button>
         <Title>or</Title>
-        <Input placeholder='username' />
-        <Input placeholder='email' />
-        <Input type='password' placeholder='password' />
+        <Input
+          type='text'
+          placeholder='name'
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          type='email'
+          placeholder='email'
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type='password'
+          placeholder='confirm password'
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+        />
         <Button>Sign up</Button>
       </Wrapper>
       <More>
