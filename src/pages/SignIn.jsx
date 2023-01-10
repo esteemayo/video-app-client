@@ -31,9 +31,19 @@ const SignIn = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <Input
+          type='text'
+          placeholder='username'
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Input
           type='email'
           placeholder='email'
           onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type='password'
+          placeholder='password'
+          onChange={(e) => setPassword(e.target.value)}
         />
         <Input
           type='password'
