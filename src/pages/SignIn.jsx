@@ -10,8 +10,16 @@ const SignIn = () => {
       <Wrapper>
         <Title>Sign in</Title>
         <SubTitle>to continue to YouTube</SubTitle>
-        <Input placeholder='username' />
-        <Input type='password' placeholder='password' />
+        <Input
+          type='text'
+          placeholder='username'
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Input
+          type='password'
+          placeholder='password'
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Button>Sign in</Button>
         <Title>or</Title>
         <Input placeholder='username' />
