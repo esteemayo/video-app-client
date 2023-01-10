@@ -13,7 +13,7 @@ import {
 
 const Home = ({ type }) => {
   const dispatch = useDispatch();
-  const { videos, isError } = useSelector((state) => ({ ...state.videos }));
+  const { videos, isError } = useSelector((state) => ({ ...state.video }));
 
   useEffect(() => {
     switch (type) {
