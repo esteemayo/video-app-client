@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isSuccess, isError } = useSelector((state => ({ ...state.auth })));
 
