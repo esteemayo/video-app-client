@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const SignIn = () => {
   const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+
   return (
     <Container>
       <Wrapper>
