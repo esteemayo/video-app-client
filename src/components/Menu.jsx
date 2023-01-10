@@ -123,7 +123,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
 const Container = styled.div`
   flex: 1;
-  height: 100%;
+  height: 100vh;
   font-size: 1.4rem;;
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
