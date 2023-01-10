@@ -3,9 +3,10 @@ import { login } from 'services/authService';
 
 export const loginUser = createAsyncThunk(
   'auth/login',
-  async ({ credentials }, { rejectWithValue }) => {
+  async ({ credentials, toast }, { rejectWithValue }) => {
     try {
       const { data } = await login({ ...credentials });
+      toast.success('Login successfully');
       return data.details;
     } catch (err) {
       const message = err.response.data;
