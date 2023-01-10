@@ -24,7 +24,7 @@ const SignIn = () => {
       password,
     };
 
-    dispatch(loginUser({ credentials }));
+    dispatch(loginUser({ credentials, toast }));
   };
 
   useEffect(() => {
