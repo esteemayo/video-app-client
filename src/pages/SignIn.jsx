@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [username, setUsername] = useState(null);
