@@ -77,7 +77,7 @@ export const videoSlice = createSlice({
       .addCase(fetchTrendingVideos.rejected, (state, { payload }) => {
         state.isLoading = false
         state.isSuccess = false;
-        state.isError = payload;
+        state.isError = payload.message;
       })
       .addCase(fetchSubscribeVideos.pending, (state) => {
         state.isLoading = true;
