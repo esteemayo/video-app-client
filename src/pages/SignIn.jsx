@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loginUser, reset } from 'features/auth/authSlice';
+import { loginUser, reset } from 'features/user/userSlice';
 
 const SignIn = () => {
   const navigate = useNavigate();
