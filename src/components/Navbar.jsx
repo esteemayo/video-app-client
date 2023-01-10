@@ -6,7 +6,7 @@ import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const Navbar = () => {
-  const { user } = useSelector(state => ({ ...state.user }));
+  const { user } = useSelector((state) => ({ ...state.user }));
 
   return (
     <Container>
