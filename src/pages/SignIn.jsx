@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const SignIn = () => {
+  const [username, setUsername] = useState(null);
   return (
     <Container>
       <Wrapper>
