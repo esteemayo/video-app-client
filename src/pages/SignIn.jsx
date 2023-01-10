@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { loginUser, reset } from 'features/auth/authSlice';
+
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,6 +16,22 @@ const SignIn = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
   const [passwordConfirm, setPasswordConfirm] = useState(null);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const credentials = {
+      username,
+      password,
+    };
+
+    dispatch(loginUser({ credentials }));
+  };
+
+  useEffect(() => {
+    user && isSuccess && navigate('/');
+    isError && toast.error(isError);
+    dispatch(reset());
+  }, [user, isError, isSuccess, navigate, dispatch]);
 
   return (
     <Container>
@@ -30,7 +48,7 @@ const SignIn = () => {
           placeholder='password'
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button>Sign in</Button>
+        <Button onClick={handleLogin}>Sign in</Button>
         <Title>or</Title>
         <Input
           type='text'
