@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import authSlice from 'features/auth/authSlice';
+import authSlice from 'features/user/userSlice';
 import videoSlice from 'features/video/videoSlice';
 
 const store = configureStore({
