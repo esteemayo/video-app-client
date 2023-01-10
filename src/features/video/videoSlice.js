@@ -64,7 +64,7 @@ export const videoSlice = createSlice({
       .addCase(fetchRandomVideos.rejected, (state, { payload }) => {
         state.isLoading = false
         state.isSuccess = false;
-        state.isError = payload;
+        state.isError = payload.message;
       })
       .addCase(fetchTrendingVideos.pending, (state) => {
         state.isLoading = true;
