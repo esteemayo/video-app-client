@@ -3,13 +3,30 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const Card = ({ type }) => {
+import { getUser } from 'services/userService';
+
+const Card = ({ type, user, views, title, imgUrl, createdAt }) => {
+  const [channel, setChannel] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        if (type === 'random') {
+          const { data } = await getUser(user);
+          setChannel(data.user);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [user, type]);
+
   return (
     <Link to='/video/test' style={{ textDecoration: 'none' }}>
       <Container type={type}>
         <Image
           type={type}
-          src='https://i.ytimg.com/vi/yIaXoop8gl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2VJRNoxplXXHPk86CweGbZzARow'
+          src={imgUrl}
           alt=''
         />
         <Details type={type}>
@@ -19,9 +36,9 @@ const Card = ({ type }) => {
             alt=''
           />
           <Texts>
-            <Title>Test Video</Title>
-            <ChannelName>Lama Dev</ChannelName>
-            <Info>660,908 views • 1 day ago</Info>
+            <Title>{title}</Title>
+            <ChannelName>{channel?.name ?? user?.name}</ChannelName>
+            <Info>{views} views • {format(createdAt)}</Info>
           </Texts>
         </Details>
       </Container>
