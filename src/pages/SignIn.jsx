@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { loginUser } from 'features/auth/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SignIn = () => {
   const dispatch = useDispatch();
+  const { user, isSuccess, isError } = useSelector((state => ({ ...state.auth })));
+
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [username, setUsername] = useState(null);
