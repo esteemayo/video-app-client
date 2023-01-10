@@ -5,7 +5,7 @@ import videoSlice from 'features/video/videoSlice';
 
 const store = configureStore({
   reducer: {
-    auth: authSlice,
+    user: authSlice,
     videos: videoSlice,
   },
 });

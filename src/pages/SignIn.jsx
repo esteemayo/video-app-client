@@ -9,7 +9,7 @@ import { loginUser, reset } from 'features/user/userSlice';
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user, isSuccess, isError } = useSelector((state => ({ ...state.auth })));
+  const { user, isSuccess, isError } = useSelector((state => ({ ...state.user })));
 
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
