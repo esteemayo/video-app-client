@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const Navbar = () => {
@@ -14,12 +15,20 @@ const Navbar = () => {
           <Input type='search' placeholder='Search' />
           <SearchOutlinedIcon />
         </Search>
-        <Link to='signin' style={{ textDecoration: 'none' }}>
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
-        </Link>
+        {user ? (
+          <User>
+            <VideoCallOutlinedIcon />
+            <Avatar />
+            {user.username}
+          </User>
+        ) : (
+          <Link to='signin' style={{ textDecoration: 'none' }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>
+        )}
       </Wrapper>
     </Container>
   );
@@ -63,6 +72,21 @@ const Input = styled.input`
   font-family: inherit;
   background-color: transparent;
   caret-color: #ccc;
+`;
+
+const User = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text};
+`;
+
+const Avatar = styled.img`
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: #999;
+  border-radius: 50%;
 `;
 
 const Button = styled.button`
