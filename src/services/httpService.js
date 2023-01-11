@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
+import { getJwt } from './authService';
 
 const devEnv = process.env.NODE_ENV !== 'production';
 const { REACT_APP_API_DEV_URL, REACT_APP_API_PROD_URL } = process.env;
@@ -16,6 +17,7 @@ const authFetch = Axios.create({
 
 authFetch.interceptors.request.use(
   (req) => {
+    req.headers.common['Authorization'] = `Bearer ${getJwt()}`;
     return req;
   },
   (error) => {
