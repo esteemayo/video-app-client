@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { auth, provider } from '../firebase';
