@@ -30,7 +30,7 @@ export const fetchSubscribeVideos = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await videoAPI.getSubscribedVideos();
-      return data.videos;
+      return data.list;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
