@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { auth, provider } from '../firebase';
-import { loginUser, reset } from 'features/user/userSlice';
+import { googleSignIn, loginUser, reset } from 'features/user/userSlice';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -28,6 +28,24 @@ const SignIn = () => {
 
     dispatch(loginUser({ credentials, toast }));
   };
+
+  const signInWithGoogle = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        const credentials = {
+          name: result.user.displayName,
+          username: result.user.displayName.split(' ')[0],
+          email: result.user.email,
+          img: result.user.photoURL,
+        };
+
+        dispatch(googleSignIn({ credentials, toast }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   useEffect(() => {
     user && isSuccess && navigate('/');
@@ -51,6 +69,8 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button onClick={handleLogin}>Sign in</Button>
+        <Title>or</Title>
+        <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
         <Input
           type='text'
