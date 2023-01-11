@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { auth, provider } from '../firebase';
 import { loginUser, reset } from 'features/user/userSlice';
 
 const SignIn = () => {
