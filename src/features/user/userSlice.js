@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { getJwt, login } from 'services/authService';
-import { getFromStorage, setToStorage, tokenKey } from 'utils';
+import { clearStorage, getFromStorage, setToStorage, tokenKey } from 'utils';
 
 export const loginUser = createAsyncThunk(
   'auth/login',
@@ -26,6 +26,16 @@ const initialState = {
   isSuccess: false,
   isError: null,
 };
+
+if (token) {
+  const decoded = jwtDecode(token);
+  const expiryDate = Date.now();
+
+  if (expiryDate > decoded.exp * 1000) {
+    clearStorage();
+    initialState.user = null;
+  }
+}
 
 export const authSlice = createSlice({
   name: 'auth',
