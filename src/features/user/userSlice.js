@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 import { login } from 'services/authService';
+import { setToStorage, tokenKey } from 'utils';
 
 export const loginUser = createAsyncThunk(
   'auth/login',
@@ -39,6 +41,7 @@ export const authSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = true;
+        setToStorage(tokenKey, payload);
         state.user = payload;
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
