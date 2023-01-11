@@ -1,3 +1,4 @@
+import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { login } from 'services/authService';
