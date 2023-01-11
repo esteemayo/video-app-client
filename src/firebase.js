@@ -2,7 +2,7 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCPR6bOQOP21LTueMCuZssgjTjTDhI28Jo',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'video-42829.firebaseapp.com',
   projectId: 'video-42829',
   storageBucket: 'video-42829.appspot.com',
