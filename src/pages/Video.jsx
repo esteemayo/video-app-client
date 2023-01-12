@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 import Card from 'components/Card';
@@ -15,6 +16,7 @@ import { fetchVideo } from 'features/video/videoSlice';
 const Video = () => {
   const { slug } = useParams();
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.user }));
   const { video } = useSelector((state) => ({ ...state.video }));
 
   useEffect(() => {
@@ -40,7 +42,11 @@ const Video = () => {
           <Info>{video.views} views • {format(video.createAt)}</Info>
           <Buttons>
             <Button>
-              <ThumbUpOutlinedIcon /> {video.likes?.length}
+              {video.likes?.includes(user._id) ? (
+                <ThumbUpIcon />
+              ) : (
+                <ThumbUpOutlinedIcon />
+              )} {video.likes?.length}
             </Button>
             <Button>
               <ThumbDownOffAltOutlinedIcon /> Dislike
