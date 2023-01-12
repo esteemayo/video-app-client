@@ -9,11 +9,16 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 
 import Card from 'components/Card';
 import Comments from 'components/Comments';
+import { fetchVideo } from 'features/video/videoSlice';
 
 const Video = () => {
   const { slug } = useParams();
   const dispatch = useDispatch();
   const { video } = useSelector((state) => ({ ...state.video }));
+
+  useEffect(() => {
+    dispatch(fetchVideo(slug));
+  }, [dispatch, slug]);
 
   return (
     <Container>
