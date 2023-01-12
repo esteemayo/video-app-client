@@ -9,6 +9,19 @@ import {
   tokenKey,
 } from 'utils';
 
+export const registerUser = createAsyncThunk(
+  'auth/register',
+  async ({ credentials, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.register({ ...credentials });
+      toast.success('Registration successful');
+      return data.details;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 export const loginUser = createAsyncThunk(
   'auth/login',
   async ({ credentials, toast }, { rejectWithValue }) => {
@@ -74,6 +87,21 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(registerUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(registerUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.user = null;
+        state.isError = payload.message;
+      })
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
       })
