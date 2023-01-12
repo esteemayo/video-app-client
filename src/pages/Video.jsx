@@ -20,8 +20,8 @@ const Video = () => {
   const { user } = useSelector((state) => ({ ...state.user }));
   const { video } = useSelector((state) => ({ ...state.video }));
 
-  const userId = user._id;
-  const videoId = video._id;
+  const userId = user?._id;
+  const videoId = video?._id;
 
   const handleLike = () => {
     dispatch(likeVideo({ videoId, userId }));
@@ -88,7 +88,12 @@ const Video = () => {
               <Description>{video.desc}</Description>
             </ChannelDetail>
           </ChannelInfo>
-          <Subscribe>SUBSCRIBE</Subscribe>
+          <Subscribe>
+            {user.subscribedUsers?.includes(video.user?._id)
+              ? 'SUBSCRIBED'
+              : 'SUBSCRIBE'
+            }
+          </Subscribe>
         </Channel>
         <Hr />
         <Comments />
