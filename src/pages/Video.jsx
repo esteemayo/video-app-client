@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
@@ -10,6 +11,8 @@ import Comments from 'components/Comments';
 
 const Video = () => {
   const { slug } = useParams();
+  const dispatch = useDispatch();
+  const { video } = useSelector((state) => ({ ...state.video }));
 
   return (
     <Container>
