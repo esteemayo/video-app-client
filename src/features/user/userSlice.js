@@ -48,6 +48,18 @@ export const googleSignIn = createAsyncThunk(
     }
   });
 
+export const subscription = createAsyncThunk(
+  'auth/subscribe',
+  async ({ channelId }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.googleLogin(channelId);
+      return data;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 const token = authAPI.getJwt();
 const user = getFromStorage(tokenKey);
 
@@ -131,6 +143,16 @@ export const authSlice = createSlice({
         state.isSuccess = false;
         state.user = null;
         state.isError = payload.message;
+      })
+      .addCase(subscription.fulfilled, (state, { payload }) => {
+        if (state.user.subscribedUsers.include(payload.channelId)) {
+          state.user.subscribedUsers.splice(
+            state.user.subscribedUsers.findIndex((channelId) => channelId === payload.channelId),
+            1,
+          );
+        } else {
+          state.user.subscribedUsers.push(payload.channelId);
+        }
       })
   }
 });
