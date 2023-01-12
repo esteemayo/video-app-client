@@ -9,6 +9,8 @@ import Comments from 'components/Comments';
 
 const Video = () => {
   return (
+  const { slug } = useParams();
+  
     <Container>
       <Content>
         <VideoWrapper>
