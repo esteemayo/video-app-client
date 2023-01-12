@@ -45,7 +45,7 @@ const SignIn = () => {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   useEffect(() => {
     user && isSuccess && navigate('/');
