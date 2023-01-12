@@ -63,6 +63,18 @@ export const likeVideo = createAsyncThunk(
     }
   });
 
+export const dislikeVideo = createAsyncThunk(
+  'videos/dislikeVideo',
+  async (videoId, { rejectWithValue }) => {
+    try {
+      const { data } = await userAPI.dislikeVideo(videoId);
+      return data.video;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 const initialState = {
   videos: [],
   video: {},
@@ -140,7 +152,16 @@ export const videoSlice = createSlice({
           );
         }
       })
-  }
+      .addCase(dislikeVideo.fulfilled, (state, { payload }) => {
+        if (!state.videos.likes.includes(payload)) {
+          state.videos.dislikes.push(payload);
+          state.videos.likes.splice(
+            state.videos.likes.findIndex((userId) => userId === payload),
+            1,
+          );
+        }
+      })
+  },
 });
 
 export const { reset } = videoSlice.actions;
