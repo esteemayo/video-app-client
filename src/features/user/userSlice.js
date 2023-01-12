@@ -2,6 +2,7 @@ import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import * as authAPI from 'services/authService';
+import * as userAPI from 'services/userService';
 import {
   clearStorage,
   getFromStorage,
@@ -52,7 +53,19 @@ export const subscription = createAsyncThunk(
   'auth/subscribe',
   async ({ channelId }, { rejectWithValue }) => {
     try {
-      const { data } = await authAPI.googleLogin(channelId);
+      const { data } = await userAPI.subscribe(channelId);
+      return data;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
+export const unsubscribe = createAsyncThunk(
+  'auth/unsubscribe',
+  async ({ channelId }, { rejectWithValue }) => {
+    try {
+      const { data } = await userAPI.unsubscribe(channelId);
       return data;
     } catch (err) {
       const message = err.response.data;
@@ -152,6 +165,14 @@ export const authSlice = createSlice({
           );
         } else {
           state.user.subscribedUsers.push(payload.channelId);
+        }
+      })
+      .addCase(unsubscribe.fulfilled, (state, { payload }) => {
+        if (state.user.subscribedUsers.include(payload.channelId)) {
+          state.user.subscribedUsers.splice(
+            state.user.subscribedUsers.findIndex((channelId) => channelId === payload.channelId),
+            1,
+          );
         }
       })
   }
