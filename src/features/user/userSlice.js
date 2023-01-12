@@ -28,7 +28,7 @@ export const googleSignIn = createAsyncThunk(
     try {
       const { data } = await authAPI.googleLogin({ ...credentials });
       toast.success('Login successfully');
-      return data.user;
+      return data;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
