@@ -13,3 +13,6 @@ export const likeVideo = (videoId) =>
 
 export const dislikeVideo = (videoId) =>
   http.patch(`${apiEndpoint}/dislike/${videoId}`);
+
+export const subscribe = (userId) =>
+  http.patch(`${apiEndpoint}/subscribe/${userId}`);
