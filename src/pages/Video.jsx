@@ -43,14 +43,18 @@ const Video = () => {
           <Info>{video.views} views • {format(video.createAt)}</Info>
           <Buttons>
             <Button>
-              {video.likes?.includes(user._id) ? (
+              {video.likes?.includes(user?._id) ? (
                 <ThumbUpIcon />
               ) : (
                 <ThumbUpOutlinedIcon />
               )} {video.likes?.length}
             </Button>
             <Button>
-              <ThumbDownOffAltOutlinedIcon /> Dislike
+              {video.dislikes?.includes(user?._id) ? (
+                <ThumbDownIcon />
+              ) : (
+                < ThumbDownOffAltOutlinedIcon />
+              )} Dislike
             </Button>
             <Button>
               <ReplyOutlinedIcon /> Share
@@ -68,8 +72,8 @@ const Video = () => {
               alt=''
             />
             <ChannelDetail>
-              <ChannelName>{video.user.name}</ChannelName>
-              <ChannelCounter>{video.user.subscribers} subscribers</ChannelCounter>
+              <ChannelName>{video.user?.name}</ChannelName>
+              <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
               <Description>{video.desc}</Description>
             </ChannelDetail>
           </ChannelInfo>
