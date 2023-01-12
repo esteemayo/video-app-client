@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
@@ -22,6 +22,7 @@ import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightne
 import logo from '../img/logo.png';
 
 const Menu = ({ darkMode, setDarkMode }) => {
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.user }));
 
   return (
