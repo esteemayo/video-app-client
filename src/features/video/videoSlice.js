@@ -53,10 +53,13 @@ export const fetchVideo = createAsyncThunk(
 
 export const likeVideo = createAsyncThunk(
   'videos/likeVideo',
-  async (videoId, { rejectWithValue }) => {
+  async ({ videoId, userId }, { rejectWithValue }) => {
     try {
       const { data } = await userAPI.likeVideo(videoId);
-      return data.video;
+      return {
+        data: data.video,
+        userId,
+      };
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
@@ -144,10 +147,10 @@ export const videoSlice = createSlice({
         state.isError = payload.message;
       })
       .addCase(likeVideo.fulfilled, (state, { payload }) => {
-        if (!state.video.likes.includes(payload)) {
-          state.video.likes.push(payload);
+        if (!state.video.likes.includes(payload.userId)) {
+          state.video.likes.push(payload.userId);
           state.video.dislikes.splice(
-            state.video.dislikes.findIndex((userId) => userId === payload),
+            state.video.dislikes.findIndex((userId) => userId === payload.userId),
             1,
           );
         }
