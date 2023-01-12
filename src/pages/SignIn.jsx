@@ -47,6 +47,20 @@ const SignIn = () => {
       });
   };
 
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    const credentials = {
+      name,
+      username,
+      email,
+      password,
+      passwordConfirm,
+    };
+
+    dispatch(registerUser({ credentials, toast }));
+  };
+
   useEffect(() => {
     user && isSuccess && navigate('/');
     isError && toast.error(isError);
@@ -97,7 +111,7 @@ const SignIn = () => {
           placeholder='confirm password'
           onChange={(e) => setPasswordConfirm(e.target.value)}
         />
-        <Button>Sign up</Button>
+        <Button onClick={handleRegister}>Sign up</Button>
       </Wrapper>
       <More>
         English(USA)
