@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 import { format } from 'timeago.js';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { useDispatch, useSelector } from 'react-redux';
+import ThumbDownIcon from '@mui/icons-material/ThumbUp';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 import Card from 'components/Card';
