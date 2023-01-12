@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
+import ProtectedRoute from 'utils/ProtectedRoute';
 import { darkTheme, lightTheme } from 'utils/Theme';
 import { Home, SharedLayout, SignIn, Video } from 'pages';
 
@@ -23,7 +24,12 @@ function App() {
                   <Route index element={<Home type='random' />} />
                   <Route path='trends' element={<Home type='trend' />} />
                   <Route path='subscriptions' element={<Home type='subscriptions' />} />
-                  <Route path='signin' element={<SignIn />} />
+                  <Route path='signin'
+                    element={<ProtectedRoute>
+                      <SignIn />
+                    </ProtectedRoute>
+                    }
+                  />
                   <Route path='video'>
                     <Route path=':id' element={<Video />} />
                   </Route>
