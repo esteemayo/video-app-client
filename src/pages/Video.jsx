@@ -18,7 +18,7 @@ const Video = () => {
 
   useEffect(() => {
     dispatch(fetchVideo(slug));
-  }, [dispatch, slug]);
+  }, [slug, dispatch]);
 
   return (
     <Container>
