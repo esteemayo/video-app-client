@@ -12,7 +12,7 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 
 import Card from 'components/Card';
 import Comments from 'components/Comments';
-import { fetchVideo, likeVideo } from 'features/video/videoSlice';
+import { dislikeVideo, fetchVideo, likeVideo } from 'features/video/videoSlice';
 
 const Video = () => {
   const { slug } = useParams();
@@ -25,6 +25,10 @@ const Video = () => {
 
   const handleLike = () => {
     dispatch(likeVideo({ videoId, userId }));
+  };
+
+  const handleDislike = () => {
+    dispatch(dislikeVideo({ videoId, userId }));
   };
 
   useEffect(() => {
@@ -56,7 +60,7 @@ const Video = () => {
                 <ThumbUpOutlinedIcon />
               )} {video.likes?.length}
             </Button>
-            <Button>
+            <Button onClick={handleDislike}>
               {video.dislikes?.includes(user?._id) ? (
                 <ThumbDownIcon />
               ) : (
