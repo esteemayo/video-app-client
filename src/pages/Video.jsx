@@ -28,19 +28,19 @@ const Video = () => {
           <iframe
             width='100%'
             height='720'
-            src='https://www.youtube.com/embed/k3Vfj-e1Ma4'
+            src={video.videoUrl}
             title='YouTube video player'
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
           ></iframe>
         </VideoWrapper>
-        <Title>Test Video</Title>
+        <Title>{video.title}</Title>
         <Details>
-          <Info>7,948,154 views • Jun 22, 2022</Info>
+          <Info>{video.views} views • {format(video.createAt)}</Info>
           <Buttons>
             <Button>
-              <ThumbUpOutlinedIcon /> 123
+              <ThumbUpOutlinedIcon /> {video.likes?.length}
             </Button>
             <Button>
               <ThumbDownOffAltOutlinedIcon /> Dislike
@@ -61,14 +61,9 @@ const Video = () => {
               alt=''
             />
             <ChannelDetail>
-              <ChannelName>Lama Dev</ChannelName>
-              <ChannelCounter>200K subscribers</ChannelCounter>
-              <Description>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Doloribus laborum delectus unde quaerat dolore culpa sit aliquam
-                at. Vitae facere ipsum totam ratione exercitationem. Suscipit
-                animi accusantium dolores ipsam ut.
-              </Description>
+              <ChannelName>{video.user.name}</ChannelName>
+              <ChannelCounter>{video.user.subscribers} subscribers</ChannelCounter>
+              <Description>{video.desc}</Description>
             </ChannelDetail>
           </ChannelInfo>
           <Subscribe>SUBSCRIBE</Subscribe>
@@ -77,6 +72,7 @@ const Video = () => {
         <Comments />
       </Content>
       <Recommendation>
+        {/* <Card type='sm' />
         <Card type='sm' />
         <Card type='sm' />
         <Card type='sm' />
@@ -88,8 +84,7 @@ const Video = () => {
         <Card type='sm' />
         <Card type='sm' />
         <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
+        <Card type='sm' /> */}
       </Recommendation>
     </Container>
   );
