@@ -16,3 +16,6 @@ export const dislikeVideo = (videoId) =>
 
 export const subscribe = (userId) =>
   http.patch(`${apiEndpoint}/subscribe/${userId}`);
+
+export const unsubscribe = (userId) =>
+  http.patch(`${apiEndpoint}/unsubscribe/${userId}`);
