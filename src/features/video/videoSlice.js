@@ -1,4 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+import * as userAPI from 'services/userService';
 import * as videoAPI from 'services/videoService';
 
 export const fetchRandomVideos = createAsyncThunk(
@@ -42,6 +44,18 @@ export const fetchVideo = createAsyncThunk(
   async (slug, { rejectWithValue }) => {
     try {
       const { data } = await videoAPI.getVideoBySlug(slug);
+      return data.video;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
+export const likeVideo = createAsyncThunk(
+  'videos/likeVideo',
+  async (videoId, { rejectWithValue }) => {
+    try {
+      const { data } = await userAPI.likeVideo(videoId);
       return data.video;
     } catch (err) {
       const message = err.response.data;
@@ -116,6 +130,15 @@ export const videoSlice = createSlice({
         state.isLoading = false
         state.isSuccess = false;
         state.isError = payload.message;
+      })
+      .addCase(likeVideo.fulfilled, (state, { payload }) => {
+        if (!state.videos.likes.includes(payload)) {
+          state.videos.likes.push(payload);
+          state.videos.dislikes.splice(
+            state.videos.dislikes.findIndex((userId) => userId === payload),
+            1,
+          );
+        }
       })
   }
 });
