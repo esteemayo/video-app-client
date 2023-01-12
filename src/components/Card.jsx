@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { getUser } from 'services/userService';
 
-const Card = ({ type, user, views, title, imgUrl, createdAt }) => {
+const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
   const [channel, setChannel] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Card = ({ type, user, views, title, imgUrl, createdAt }) => {
   }, [user, type]);
 
   return (
-    <Link to='/video/test' style={{ textDecoration: 'none' }}>
+    <Link to={`/video/${slug}`} style={{ textDecoration: 'none' }}>
       <Container type={type}>
         <Image
           type={type}
