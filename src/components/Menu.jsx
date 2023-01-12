@@ -27,6 +27,11 @@ const Menu = ({ darkMode, setDarkMode }) => {
   const navigate = useNavigate();
   const { user } = useSelector((state) => ({ ...state.user }));
 
+  const handleLogout = () => {
+    dispatch(setLogout());
+    navigate('/');
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -120,7 +125,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           <SettingsBrightnessOutlinedIcon />
           {darkMode ? 'Light' : 'Dark'} Mode
         </Item>
-        <Item>
+        <Item onClick={handleLogout}>
           <LogoutIcon />
           Logout
         </Item>
