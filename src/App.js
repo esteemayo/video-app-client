@@ -32,7 +32,7 @@ function App() {
                     }
                   />
                   <Route path='video'>
-                    <Route path=':id' element={<Video />} />
+                    <Route path=':slug' element={<Video />} />
                   </Route>
                 </Route>
                 cards
