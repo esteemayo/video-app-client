@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
@@ -8,9 +9,9 @@ import Card from 'components/Card';
 import Comments from 'components/Comments';
 
 const Video = () => {
-  return (
   const { slug } = useParams();
-  
+
+  return (
     <Container>
       <Content>
         <VideoWrapper>
