@@ -117,6 +117,10 @@ const Menu = ({ darkMode, setDarkMode }) => {
           <SettingsBrightnessOutlinedIcon />
           {darkMode ? 'Light' : 'Dark'} Mode
         </Item>
+        <Item>
+          <LogoutIcon />
+          Logout
+        </Item>
       </Wrapper>
     </Container>
   );
