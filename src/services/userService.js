@@ -10,3 +10,6 @@ export const getUser = (userId) => http.get(userUrl(userId));
 
 export const likeVideo = (videoId) =>
   http.patch(`${apiEndpoint}/like/${videoId}`);
+
+export const dislikeVideo = (videoId) =>
+  http.patch(`${apiEndpoint}/dislike/${videoId}`);
