@@ -88,7 +88,7 @@ export const authSlice = createSlice({
       .addCase(googleSignIn.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = true;
-        // setToStorage(tokenKey, payload);
+        setToStorage(tokenKey, payload);
         state.user = payload;
       })
       .addCase(googleSignIn.rejected, (state, { payload }) => {
