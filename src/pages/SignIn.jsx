@@ -6,7 +6,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { auth, provider } from '../firebase';
-import { googleSignIn, loginUser, reset } from 'features/user/userSlice';
+import { googleSignIn, loginUser, registerUser, reset } from 'features/user/userSlice';
 
 const SignIn = () => {
   const navigate = useNavigate();
