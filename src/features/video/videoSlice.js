@@ -153,10 +153,10 @@ export const videoSlice = createSlice({
         }
       })
       .addCase(dislikeVideo.fulfilled, (state, { payload }) => {
-        if (!state.videos.likes.includes(payload)) {
-          state.videos.dislikes.push(payload);
-          state.videos.likes.splice(
-            state.videos.likes.findIndex((userId) => userId === payload),
+        if (!state.video.likes.includes(payload)) {
+          state.video.dislikes.push(payload);
+          state.video.likes.splice(
+            state.video.likes.findIndex((userId) => userId === payload),
             1,
           );
         }
