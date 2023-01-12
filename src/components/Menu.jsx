@@ -125,10 +125,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
           <SettingsBrightnessOutlinedIcon />
           {darkMode ? 'Light' : 'Dark'} Mode
         </Item>
-        <Item onClick={handleLogout}>
-          <LogoutIcon />
-          Logout
-        </Item>
+        {user && (
+          <Item onClick={handleLogout}>
+            <LogoutIcon />
+            Logout
+          </Item>
+        )}
       </Wrapper>
     </Container>
   );
