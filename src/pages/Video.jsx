@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { useDispatch, useSelector } from 'react-redux';
-import ThumbDownIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
@@ -12,13 +12,20 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 
 import Card from 'components/Card';
 import Comments from 'components/Comments';
-import { fetchVideo } from 'features/video/videoSlice';
+import { fetchVideo, likeVideo } from 'features/video/videoSlice';
 
 const Video = () => {
   const { slug } = useParams();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.user }));
   const { video } = useSelector((state) => ({ ...state.video }));
+
+  const userId = user._id;
+  const videoId = video._id;
+
+  const handleLike = () => {
+    dispatch(likeVideo({ videoId, userId }));
+  };
 
   useEffect(() => {
     dispatch(fetchVideo(slug));
@@ -42,7 +49,7 @@ const Video = () => {
         <Details>
           <Info>{video.views} views • {format(video.createAt)}</Info>
           <Buttons>
-            <Button>
+            <Button onClick={handleLike}>
               {video.likes?.includes(user?._id) ? (
                 <ThumbUpIcon />
               ) : (
