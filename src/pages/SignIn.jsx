@@ -21,6 +21,7 @@ const SignIn = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
     const credentials = {
       username,
       password,
@@ -32,7 +33,6 @@ const SignIn = () => {
   const signInWithGoogle = async () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
         const credentials = {
           name: result.user.displayName,
           username: result.user.displayName.split(' ')[0],
