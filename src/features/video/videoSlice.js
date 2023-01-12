@@ -37,6 +37,18 @@ export const fetchSubscribeVideos = createAsyncThunk(
     }
   });
 
+export const fetchVideo = createAsyncThunk(
+  'videos/getVideoBySlug',
+  async (slug, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.getVideoBySlug(slug);
+      return data.video;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 const initialState = {
   videos: [],
   video: {},
@@ -88,6 +100,19 @@ export const videoSlice = createSlice({
         state.videos = payload;
       })
       .addCase(fetchSubscribeVideos.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload.message;
+      })
+      .addCase(fetchVideo.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchVideo.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.video = payload;
+      })
+      .addCase(fetchVideo.rejected, (state, { payload }) => {
         state.isLoading = false
         state.isSuccess = false;
         state.isError = payload.message;
