@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
-import { fetchCommentsOnVideo } from 'features/video/videoSlice';
+import { createComment, fetchCommentsOnVideo } from 'features/video/videoSlice';
 
 const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
@@ -11,6 +11,11 @@ const Comments = ({ videoId }) => {
   const { comments } = useSelector((state) => ({ ...state.video }));
 
   const [desc, setDesc] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createComment(videoId, desc));
+  };
 
   useEffect(() => {
     dispatch(fetchCommentsOnVideo(videoId));
@@ -23,7 +28,7 @@ const Comments = ({ videoId }) => {
           src={user.img}
           alt=''
         />
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Input
             type='text'
             value={desc}
