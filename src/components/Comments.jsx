@@ -60,10 +60,13 @@ const Form = styled.form`
 const Input = styled.input`
   border: none;
   outline: none;
+  display: inline-block;
+  font-family: inherit;
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.soft};
-  background-color: transparent;
   padding: 0.5rem;
+  background-color: transparent;
+  color: ${({ theme }) => theme.text};
+  border-bottom: 1px solid ${({ theme }) => theme.soft};
   caret-color: ${({ theme }) => theme.textSoft};
 `;
 
