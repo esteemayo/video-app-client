@@ -20,6 +20,7 @@ const Search = () => {
     <Container>
       <Input
         type='text'
+        value={query}
         placeholder='Search'
         onChange={(e) => setQuery(e.target.value)}
       />
