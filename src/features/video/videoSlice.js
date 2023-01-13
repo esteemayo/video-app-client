@@ -101,9 +101,9 @@ export const createNewVideo = createAsyncThunk(
 
 export const createComment = createAsyncThunk(
   'videos/createComment',
-  async (videoId, comment, { rejectWithValue }) => {
+  async ({ videoId, desc }, { rejectWithValue }) => {
     try {
-      const { data } = await videoAPI.createCommentOnVideo(videoId, { ...comment });
+      const { data } = await videoAPI.createCommentOnVideo(videoId, desc);
       return data.comment;
     } catch (err) {
       const message = err.response.data;
