@@ -7,6 +7,7 @@ import { fetchCommentsOnVideo, reset } from 'features/video/videoSlice';
 
 const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.user }));
   const { comments } = useSelector((state) => ({ ...state.video }));
 
   useEffect(() => {
