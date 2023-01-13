@@ -61,11 +61,15 @@ const Upload = ({ onClose }) => {
           placeholder='Separate the tags with commas.'
         />
         <Label>Image</Label>
-        <Input
-          type='file'
-          accept='image/*'
-          onChange={(e) => setImg(e.target.files[0])}
-        />
+        {imgPerc > 0 ? (
+          'Uploading:' + imgPerc
+        ) : (
+          <Input
+            type='file'
+            accept='image/*'
+            onChange={(e) => setImg(e.target.files[0])}
+          />
+        )}
         <Button>Upload</Button>
       </Wrapper>
     </Container>
