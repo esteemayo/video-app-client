@@ -95,7 +95,7 @@ const Video = () => {
           </Subscribe>
         </Channel>
         <Hr />
-        <Comments />
+        <Comments videoId={videoId} />
       </Content>
       <Recommendation>
         {/* <Card type='sm' />
