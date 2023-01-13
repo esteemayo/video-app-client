@@ -18,7 +18,11 @@ const Navbar = () => {
       <Container>
         <Wrapper>
           <Search>
-            <Input type='text' placeholder='Search' />
+            <Input
+              type='text'
+              placeholder='Search'
+              onChange={(e) => setQuery(e.target.value)}
+            />
             <SearchOutlinedIcon />
           </Search>
           {user ? (
