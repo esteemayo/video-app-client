@@ -212,11 +212,11 @@ const Subscribe = styled.button`
   display: inline-block;
   text-transform: uppercase;
   font-weight: 500;
+  height: max-content;
+  padding: 1rem 2rem;
   background-color: #cc1a00;
   color: #fff;
   border-radius: 0.3rem;
-  height: max-content;
-  padding: 1rem 2rem;
   cursor: pointer;
 `;
 
