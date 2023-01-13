@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
@@ -10,6 +9,8 @@ const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.user }));
   const { comments } = useSelector((state) => ({ ...state.video }));
+
+  const [desc, setDesc] = useState('');
 
   useEffect(() => {
     dispatch(fetchCommentsOnVideo(videoId));
