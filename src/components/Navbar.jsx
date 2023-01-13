@@ -14,6 +14,14 @@ const Navbar = () => {
   const [query, setQuery] = useState('');
   const { user } = useSelector((state) => ({ ...state.user }));
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (query) {
+      navigate(`/search?q=${query}`);
+    }
+  };
+
   return (
     <>
       <Container>
@@ -24,7 +32,7 @@ const Navbar = () => {
               placeholder='Search'
               onChange={(e) => setQuery(e.target.value)}
             />
-            <SearchOutlinedIcon />
+            <SearchOutlinedIcon onClick={handleSearch} />
           </Search>
           {user ? (
             <User>
