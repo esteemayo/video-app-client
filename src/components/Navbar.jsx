@@ -17,7 +17,7 @@ const Navbar = () => {
         </Search>
         {user ? (
           <User>
-            <VideoCallOutlinedIcon />
+            <VideoCallOutlinedIcon style={{ fontSize: '3rem' }} />
             <Avatar src={user.img} alt='' />
             {user.username}
           </User>
