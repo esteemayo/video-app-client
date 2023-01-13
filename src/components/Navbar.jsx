@@ -19,7 +19,10 @@ const Navbar = () => {
         </Search>
         {user ? (
           <User>
-            <VideoCallOutlinedIcon style={{ fontSize: '3rem' }} />
+            <VideoCallOutlinedIcon
+              style={{ fontSize: '3rem' }}
+              onClick={() => setOpen(false)}
+            />
             <Avatar src={user.img} alt='' />
             {user.username}
           </User>
