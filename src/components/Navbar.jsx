@@ -20,6 +20,7 @@ const Navbar = () => {
 
     if (query) {
       navigate(`/search?q=${query}`);
+      setQuery('');
     }
   };
 
