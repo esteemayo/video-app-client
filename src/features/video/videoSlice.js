@@ -84,6 +84,7 @@ export const dislikeVideo = createAsyncThunk(
 const initialState = {
   videos: [],
   video: {},
+  comments: [],
   isLoading: false,
   isSuccess: false,
   isError: null,
