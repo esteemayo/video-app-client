@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import {
   getStorage,
   ref,
@@ -10,6 +11,7 @@ import {
 import app from '../firebase';
 
 const Upload = ({ onClose }) => {
+  const dispatch = useDispatch();
   const [img, setImg] = useState(null);
   const [tags, setTags] = useState([]);
   const [desc, setDesc] = useState(null);
