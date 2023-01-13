@@ -158,7 +158,7 @@ export const authSlice = createSlice({
         state.isError = payload.message;
       })
       .addCase(subscription.fulfilled, (state, { payload }) => {
-        if (!state.user.subscribedUsers.include(payload)) {
+        if (!state.user.subscribedUsers.includes(payload)) {
           state.user.subscribedUsers.push(payload);
         }
       })
