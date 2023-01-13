@@ -15,6 +15,9 @@ export const getSubscribedVideos = () => http.get(`${apiEndpoint}/subscribe`);
 export const getVideosByTags = (tags) =>
   http.get(`${apiEndpoint}/tags?tags=${tags}`);
 
+export const searchVideos = (query) =>
+  http.get(`${apiEndpoint}/search?q=${query}`);
+
 export const getCommentsOnVideo = (videoId) =>
   http.get(`${videoUrl(videoId)}/comments`);
 
