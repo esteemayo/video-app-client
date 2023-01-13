@@ -12,6 +12,9 @@ export const getTrendingVideos = () => http.get(`${apiEndpoint}/trend`);
 
 export const getSubscribedVideos = () => http.get(`${apiEndpoint}/subscribe`);
 
+export const getVideosByTags = (tags) =>
+  http.get(`${apiEndpoint}/tags?tags=${tags}`);
+
 export const getCommentsOnVideo = (videoId) =>
   http.get(`${videoUrl(videoId)}/comments`);
 
