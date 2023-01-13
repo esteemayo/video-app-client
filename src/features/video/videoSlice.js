@@ -162,6 +162,19 @@ export const videoSlice = createSlice({
         state.isSuccess = false;
         state.isError = payload.message;
       })
+      .addCase(fetchCommentsOnVideo.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCommentsOnVideo.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.comments = payload;
+      })
+      .addCase(fetchCommentsOnVideo.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload.message;
+      })
       .addCase(likeVideo.fulfilled, (state, { payload }) => {
         if (!state.video.likes.includes(payload.userId)) {
           state.video.likes.push(payload.userId);
