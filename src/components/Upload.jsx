@@ -34,11 +34,15 @@ const Upload = ({ onClose }) => {
         <Close onClick={() => onClose(true)}>X</Close>
         <Title>Upload a New Video</Title>
         <Label>Video</Label>
-        <Input
-          type='file'
-          accept='video/*'
-          onChange={(e) => setVideo(e.target.files[0])}
-        />
+        {videoPerc > 0 ? (
+          'Uploading:' + videoPerc
+        ) : (
+          <Input
+            type='file'
+            accept='video/*'
+            onChange={(e) => setVideo(e.target.files[0])}
+          />
+        )}
         <Input
           type='text'
           name='title'
