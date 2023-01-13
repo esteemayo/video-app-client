@@ -1,5 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
+
+import app from '../firebase';
 
 const Upload = ({ onClose }) => {
   const [img, setImg] = useState(null);
