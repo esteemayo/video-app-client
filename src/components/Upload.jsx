@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   getStorage,
   ref,
