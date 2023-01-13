@@ -13,31 +13,34 @@ const Navbar = () => {
   const { user } = useSelector((state) => ({ ...state.user }));
 
   return (
-    <Container>
-      <Wrapper>
-        <Search>
-          <Input type='text' placeholder='Search' />
-          <SearchOutlinedIcon />
-        </Search>
-        {user ? (
-          <User>
-            <VideoCallOutlinedIcon
-              style={{ fontSize: '3rem' }}
-              onClick={() => setOpen(false)}
-            />
-            <Avatar src={user.img} alt='' />
-            {user.username}
-          </User>
-        ) : (
-          <Link to='signin' style={{ textDecoration: 'none' }}>
-            <Button>
-              <AccountCircleOutlinedIcon />
-              SIGN IN
-            </Button>
-          </Link>
-        )}
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <Search>
+            <Input type='text' placeholder='Search' />
+            <SearchOutlinedIcon />
+          </Search>
+          {user ? (
+            <User>
+              <VideoCallOutlinedIcon
+                style={{ fontSize: '3rem' }}
+                onClick={() => setOpen(false)}
+              />
+              <Avatar src={user.img} alt='' />
+              {user.username}
+            </User>
+          ) : (
+            <Link to='signin' style={{ textDecoration: 'none' }}>
+              <Button>
+                <AccountCircleOutlinedIcon />
+                SIGN IN
+              </Button>
+            </Link>
+          )}
+        </Wrapper>
+      </Container>
+      {!open && <Upload />}
+    </>
   );
 };
 
