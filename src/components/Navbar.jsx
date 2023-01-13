@@ -6,6 +6,8 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
+import Upload from './Upload';
+
 const Navbar = () => {
   const [open, setOpen] = useState(true);
   const { user } = useSelector((state) => ({ ...state.user }));
