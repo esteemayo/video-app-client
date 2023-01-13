@@ -23,7 +23,9 @@ const Comments = ({ videoId }) => {
         />
         <Input type='text' placeholder='Add a comment...' />
       </NewComment>
-      <Comment />
+      {comments?.map((item) => {
+        return <Comment key={item._id} {...item} />;
+      })}
     </Container>
   );
 };
