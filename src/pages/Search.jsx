@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Search = () => {
   const dispatch = useDispatch();
+  const { videos } = useSelector((state) => ({ ...state.video }));
 
   return (
     <Container>Search</Container>
