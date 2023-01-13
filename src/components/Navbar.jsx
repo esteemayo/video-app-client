@@ -10,6 +10,7 @@ import Upload from './Upload';
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const [query, setQuery] = useState('');
   const { user } = useSelector((state) => ({ ...state.user }));
 
   return (
