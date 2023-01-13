@@ -169,6 +169,7 @@ export const authSlice = createSlice({
             state.user.subscribedUsers.findIndex((channelId) => channelId === payload),
             1,
           );
+          state.user.subscribers--;
         }
       })
   }
