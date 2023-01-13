@@ -3,30 +3,26 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
+import { fetchCommentsOnVideo, reset } from 'features/video/videoSlice';
 
-const Comments = () => {
+const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
   const { comments } = useSelector((state) => ({ ...state.video }));
 
   useEffect(() => {
-    // 
-  })
+    dispatch(fetchCommentsOnVideo(videoId));
+    dispatch(reset());
+  }, [videoId, dispatch]);
 
   return (
     <Container>
       <NewComment>
         <Avatar
-          src='https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo'
+          src=''
           alt=''
         />
         <Input type='text' placeholder='Add a comment...' />
       </NewComment>
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
       <Comment />
     </Container>
   );
