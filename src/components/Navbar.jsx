@@ -70,6 +70,7 @@ const Search = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
+  color: ${({ theme }) => theme.text};
   border: 1px solid #ccc;
   border-radius: 0.3rem;
 `;
@@ -81,6 +82,7 @@ const Input = styled.input`
   width: 100%;
   font-family: inherit;
   background-color: transparent;
+  color: inherit;
   caret-color: #ccc;
 `;
 
