@@ -23,12 +23,14 @@ const Comments = ({ videoId }) => {
           src={user.img}
           alt=''
         />
-        <Input
-          type='text'
-          value={desc}
-          placeholder='Add a comment...'
-          onChange={(e) => setDesc(e.target.value)}
-        />
+        <Form>
+          <Input
+            type='text'
+            value={desc}
+            placeholder='Add a comment...'
+            onChange={(e) => setDesc(e.target.value)}
+          />
+        </Form>
       </NewComment>
       {comments?.map((item) => {
         return <Comment key={item._id} {...item} />;
@@ -49,6 +51,10 @@ const Avatar = styled.img`
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
+`;
+
+const Form = styled.form`
+  width: 100%;
 `;
 
 const Input = styled.input`
