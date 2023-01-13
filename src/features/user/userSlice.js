@@ -163,7 +163,7 @@ export const authSlice = createSlice({
         }
       })
       .addCase(unsubscribe.fulfilled, (state, { payload }) => {
-        if (state.user.subscribedUsers.include(payload)) {
+        if (state.user.subscribedUsers.includes(payload)) {
           state.user.subscribedUsers.splice(
             state.user.subscribedUsers.findIndex((channelId) => channelId === payload),
             1,
