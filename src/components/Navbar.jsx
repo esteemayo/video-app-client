@@ -12,7 +12,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Search>
-          <Input type='search' placeholder='Search' />
+          <Input type='text' placeholder='Search' />
           <SearchOutlinedIcon />
         </Search>
         {user ? (
