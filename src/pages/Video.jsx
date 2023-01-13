@@ -46,15 +46,7 @@ const Video = () => {
     <Container>
       <Content>
         <VideoWrapper>
-          <iframe
-            width='100%'
-            height='720'
-            src={video.videoUrl}
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          ></iframe>
+          <VideoFrame src={video.videoUrl} />
         </VideoWrapper>
         <Title>{video.title}</Title>
         <Details>
@@ -130,6 +122,12 @@ const Container = styled.div`
 `;
 
 const VideoWrapper = styled.div``;
+
+const VideoFrame = styled.video`
+  max-height: 72rem;
+  width: 100%;
+  object-fit: cover;
+`;
 
 const Title = styled.h1`
   font-weight: 400;
