@@ -12,6 +12,7 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 
 import Card from 'components/Card';
 import Comments from 'components/Comments';
+import { subscription, unsubscribe } from 'features/user/userSlice';
 import { dislikeVideo, fetchVideo, likeVideo } from 'features/video/videoSlice';
 
 const Video = () => {
