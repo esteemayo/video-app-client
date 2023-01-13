@@ -51,10 +51,10 @@ export const googleSignIn = createAsyncThunk(
 
 export const subscription = createAsyncThunk(
   'auth/subscribe',
-  async ({ channelId }, { rejectWithValue }) => {
+  async (channelId, { rejectWithValue }) => {
     try {
-      const { data } = await userAPI.subscribe(channelId);
-      return data;
+      await userAPI.subscribe(channelId);
+      return channelId;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
@@ -63,10 +63,10 @@ export const subscription = createAsyncThunk(
 
 export const unsubscribe = createAsyncThunk(
   'auth/unsubscribe',
-  async ({ channelId }, { rejectWithValue }) => {
+  async (channelId, { rejectWithValue }) => {
     try {
-      const { data } = await userAPI.unsubscribe(channelId);
-      return data;
+      await userAPI.unsubscribe(channelId);
+      return channelId;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
@@ -158,19 +158,14 @@ export const authSlice = createSlice({
         state.isError = payload.message;
       })
       .addCase(subscription.fulfilled, (state, { payload }) => {
-        if (state.user.subscribedUsers.include(payload.channelId)) {
-          state.user.subscribedUsers.splice(
-            state.user.subscribedUsers.findIndex((channelId) => channelId === payload.channelId),
-            1,
-          );
-        } else {
-          state.user.subscribedUsers.push(payload.channelId);
+        if (!state.user.subscribedUsers.include(payload)) {
+          state.user.subscribedUsers.push(payload);
         }
       })
       .addCase(unsubscribe.fulfilled, (state, { payload }) => {
-        if (state.user.subscribedUsers.include(payload.channelId)) {
+        if (state.user.subscribedUsers.include(payload)) {
           state.user.subscribedUsers.splice(
-            state.user.subscribedUsers.findIndex((channelId) => channelId === payload.channelId),
+            state.user.subscribedUsers.findIndex((channelId) => channelId === payload),
             1,
           );
         }
