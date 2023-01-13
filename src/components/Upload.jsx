@@ -26,7 +26,11 @@ const Upload = ({ onClose }) => {
           placeholder='Title'
           onChange={(e) => setTitle(e.target.value)}
         />
-        <Desc placeholder='Description' rows={8} />
+        <Desc
+          rows={8}
+          placeholder='Description'
+          onChange={(e) => setDesc(e.target.value)}
+        />
         <Input type='text' placeholder='Separate the tags with commas.' />
         <Label>Image</Label>
         <Input
