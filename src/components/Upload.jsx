@@ -9,6 +9,7 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
+import { createNewVideo } from 'features/video/videoSlice';
 
 const Upload = ({ onClose }) => {
   const dispatch = useDispatch();
