@@ -32,6 +32,12 @@ const Video = () => {
     dispatch(dislikeVideo({ videoId, userId }));
   };
 
+  const handleSubscribe = (channelId) => {
+    user.subscribedUsers.includes(channelId)
+      ? dispatch(unsubscribe(channelId))
+      : dispatch(subscription(channelId));
+  };
+
   useEffect(() => {
     dispatch(fetchVideo(slug));
   }, [slug, dispatch]);
@@ -89,7 +95,7 @@ const Video = () => {
               <Description>{video.desc}</Description>
             </ChannelDetail>
           </ChannelInfo>
-          <Subscribe>
+          <Subscribe onClick={() => handleSubscribe(video.user?._id)}>
             {user.subscribedUsers?.includes(video.user?._id)
               ? 'SUBSCRIBED'
               : 'SUBSCRIBE'
