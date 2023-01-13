@@ -15,6 +15,8 @@ import { createNewVideo } from 'features/video/videoSlice';
 const Upload = ({ onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { video: singleVideo, isSuccess } =
+    useSelector((state) => ({ ...state.video }));
 
   const [img, setImg] = useState(null);
   const [tags, setTags] = useState([]);
@@ -68,6 +70,19 @@ const Upload = ({ onClose }) => {
     );
   };
 
+  const handleUpload = (e) => {
+    e.preventDefault();
+
+    const newVideo = {
+      ...inputs,
+      tags,
+    };
+
+    dispatch(createNewVideo(newVideo));
+    onClose(true);
+    isSuccess && navigate(`/video/${singleVideo?.slug}`);
+  };
+
   useEffect(() => {
     video && uploadFile(video, 'videoUrl');
   }, [video]);
@@ -118,7 +133,7 @@ const Upload = ({ onClose }) => {
             onChange={(e) => setImg(e.target.files[0])}
           />
         )}
-        <Button>Upload</Button>
+        <Button onClick={handleUpload}>Upload</Button>
       </Wrapper>
     </Container>
   );
