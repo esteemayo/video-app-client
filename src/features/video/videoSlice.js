@@ -51,6 +51,30 @@ export const fetchVideo = createAsyncThunk(
     }
   });
 
+export const fetchCommentsOnVideo = createAsyncThunk(
+  'videos/getCommentsOnVideo',
+  async (videoId, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.getCommentsOnVideo(videoId);
+      return data.comments;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
+export const createNewVideo = createAsyncThunk(
+  'videos/createVideo',
+  async (video, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.createVideo({ ...video });
+      return data.video;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 export const likeVideo = createAsyncThunk(
   'videos/likeVideo',
   async ({ videoId, userId }, { rejectWithValue }) => {
@@ -75,30 +99,6 @@ export const dislikeVideo = createAsyncThunk(
         data: data.video,
         userId,
       };
-    } catch (err) {
-      const message = err.response.data;
-      return rejectWithValue(message);
-    }
-  });
-
-export const fetchCommentsOnVideo = createAsyncThunk(
-  'videos/getCommentsOnVideo',
-  async (videoId, { rejectWithValue }) => {
-    try {
-      const { data } = await videoAPI.getCommentsOnVideo(videoId);
-      return data.comments;
-    } catch (err) {
-      const message = err.response.data;
-      return rejectWithValue(message);
-    }
-  });
-
-export const createNewVideo = createAsyncThunk(
-  'videos/createVideo',
-  async (video, { rejectWithValue }) => {
-    try {
-      const { data } = await videoAPI.createVideo({ ...video });
-      return data.video;
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
