@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -5,7 +6,11 @@ import Comment from './Comment';
 
 const Comments = () => {
   const dispatch = useDispatch();
-  const useSelector = useSelector((state) => ({ ...state.video }));
+  const { comments } = useSelector((state) => ({ ...state.video }));
+
+  useEffect(() => {
+    // 
+  })
 
   return (
     <Container>
