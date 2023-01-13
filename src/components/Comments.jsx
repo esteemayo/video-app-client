@@ -1,7 +1,11 @@
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+
 import Comment from './Comment';
 
 const Comments = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <NewComment>
