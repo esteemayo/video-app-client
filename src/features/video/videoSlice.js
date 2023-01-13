@@ -193,19 +193,6 @@ export const videoSlice = createSlice({
           );
         }
       })
-      .addCase(fetchCommentsOnVideo.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(fetchCommentsOnVideo.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.comments = payload;
-      })
-      .addCase(fetchCommentsOnVideo.rejected, (state, { payload }) => {
-        state.isLoading = false
-        state.isSuccess = false;
-        state.isError = payload.message;
-      })
   },
 });
 
