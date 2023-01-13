@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Card from './Card';
 
 const Recommendation = () => {
+  const dispatch = useDispatch();
   const { recommendedVideos } = useSelector((state) => ({ ...state.video }));
 
   return (
