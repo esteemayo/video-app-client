@@ -87,7 +87,7 @@ const Upload = ({ onClose }) => {
         <Title>Upload a New Video</Title>
         <Label>Video</Label>
         {videoPerc > 0 ? (
-          'Uploading:' + videoPerc
+          `Uploading: ${videoPerc}%`
         ) : (
           <Input
             type='file'
@@ -114,7 +114,7 @@ const Upload = ({ onClose }) => {
         />
         <Label>Image</Label>
         {imgPerc > 0 ? (
-          'Uploading:' + imgPerc
+          `Uploading: ${imgPerc}%`
         ) : (
           <Input
             type='file'
