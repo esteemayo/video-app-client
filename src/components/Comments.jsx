@@ -23,7 +23,12 @@ const Comments = ({ videoId }) => {
           src={user.img}
           alt=''
         />
-        <Input type='text' placeholder='Add a comment...' />
+        <Input
+          type='text'
+          value={desc}
+          placeholder='Add a comment...'
+          onChange={(e) => setDesc(e.target.value)}
+        />
       </NewComment>
       {comments?.map((item) => {
         return <Comment key={item._id} {...item} />;
