@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   getStorage,
   ref,
@@ -13,6 +14,8 @@ import { createNewVideo } from 'features/video/videoSlice';
 
 const Upload = ({ onClose }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [img, setImg] = useState(null);
   const [tags, setTags] = useState([]);
   const [video, setVideo] = useState(null);
