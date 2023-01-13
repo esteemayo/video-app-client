@@ -59,7 +59,7 @@ const Upload = ({ onClose }) => {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           console.log('File available at', downloadURL);
-          setInputs((prev) => ({ ...prev, urlType: downloadURL }));
+          setInputs((prev) => ({ ...prev, [urlType]: downloadURL }));
 
           const newVideo = {
             ...inputs,
