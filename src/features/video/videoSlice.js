@@ -93,6 +93,18 @@ export const fetchCommentsOnVideo = createAsyncThunk(
     }
   });
 
+export const createNewVideo = createAsyncThunk(
+  'videos/createVideo',
+  async (video, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.createVideo({ ...video });
+      return data.video;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 const initialState = {
   videos: [],
   video: {},
@@ -171,6 +183,19 @@ export const videoSlice = createSlice({
         state.comments = payload;
       })
       .addCase(fetchCommentsOnVideo.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload.message;
+      })
+      .addCase(createNewVideo.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(createNewVideo.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.videos.push(payload);
+      })
+      .addCase(createNewVideo.rejected, (state, { payload }) => {
         state.isLoading = false
         state.isSuccess = false;
         state.isError = payload.message;
