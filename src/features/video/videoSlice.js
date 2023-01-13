@@ -81,6 +81,18 @@ export const dislikeVideo = createAsyncThunk(
     }
   });
 
+export const fetchCommentsOnVideo = createAsyncThunk(
+  'videos/getCommentsOnVideo',
+  async (videoId, { rejectWithValue }) => {
+    try {
+      const { data } = await videoAPI.getCommentsOnVideo(videoId);
+      return data.comments;
+    } catch (err) {
+      const message = err.response.data;
+      return rejectWithValue(message);
+    }
+  });
+
 const initialState = {
   videos: [],
   video: {},
@@ -167,6 +179,19 @@ export const videoSlice = createSlice({
             1,
           );
         }
+      })
+      .addCase(fetchCommentsOnVideo.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCommentsOnVideo.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.video = payload;
+      })
+      .addCase(fetchCommentsOnVideo.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.isSuccess = false;
+        state.isError = payload.message;
       })
   },
 });
