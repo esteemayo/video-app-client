@@ -11,6 +11,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 import Comments from 'components/Comments';
+import Recommendation from 'components/Recommendation';
 import { subscription, unsubscribe } from 'features/user/userSlice';
 import { dislikeVideo, fetchVideo, likeVideo } from 'features/video/videoSlice';
 
