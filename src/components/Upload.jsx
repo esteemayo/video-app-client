@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const Upload = ({ onClose }) => {
   const [img, setImg] = useState(null);
   const [video, setVideo] = useState(null);
-  const [imgPerc, setImgPerc] = useState(null)
-  const [videoPerc, setVideoPerc] = useState(null);
+  const [imgPerc, setImgPerc] = useState(0)
+  const [videoPerc, setVideoPerc] = useState(0);
 
   return (
     <Container>
