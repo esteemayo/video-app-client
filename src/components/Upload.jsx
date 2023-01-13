@@ -29,7 +29,7 @@ const Upload = ({ onClose }) => {
     setTags(e.target.value.split(','));
   };
 
-  const uploadFile = useCallback((file, urlType) => {
+  const uploadFile = (file, urlType) => {
     const fileName = `${new Date().getTime()}-${file.name}`;
 
     const storage = getStorage(app);
@@ -60,25 +60,18 @@ const Upload = ({ onClose }) => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           console.log('File available at', downloadURL);
           setInputs((prev) => ({ ...prev, [urlType]: downloadURL }));
-
-          const newVideo = {
-            ...inputs,
-            tags,
-          };
-
-          dispatch(createNewVideo(newVideo));
         });
       }
     );
-  }, [dispatch, inputs, tags]);
+  };
 
   useEffect(() => {
     video && uploadFile(video, 'videoUrl');
-  }, [video, uploadFile]);
+  }, [video]);
 
   useEffect(() => {
     img && uploadFile(img, 'imgUrl');
-  }, [img, uploadFile]);
+  }, [img]);
 
   return (
     <Container>
