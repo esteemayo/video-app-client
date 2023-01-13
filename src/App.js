@@ -24,6 +24,7 @@ function App() {
                   <Route index element={<Home type='random' />} />
                   <Route path='trends' element={<Home type='trend' />} />
                   <Route path='subscriptions' element={<Home type='subscriptions' />} />
+                  <Route path='search' element={<Search />} />
                   <Route path='signin'
                     element={
                       <ProtectedRoute>
@@ -34,7 +35,6 @@ function App() {
                   <Route path='video'>
                     <Route path=':slug' element={<Video />} />
                   </Route>
-                  <Route path='search' element={<Search />} />
                 </Route>
                 cards
               </Routes>
