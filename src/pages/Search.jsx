@@ -16,7 +16,6 @@ const Search = () => {
 
   const query = useQuery();
   const q = query.get('q');
-  console.log(q)
 
   useEffect(() => {
     dispatch(searchVideos(q));
