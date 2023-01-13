@@ -97,21 +97,6 @@ const Video = () => {
         <Hr />
         <Comments videoId={videoId} />
       </Content>
-      <Recommendation>
-        {/* <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' />
-        <Card type='sm' /> */}
-      </Recommendation>
     </Container>
   );
 };
@@ -219,10 +204,6 @@ const Subscribe = styled.button`
   border-radius: 0.3rem;
   outline-color: #555;
   cursor: pointer;
-`;
-
-const Recommendation = styled.div`
-  flex: 2;
 `;
 
 export default Video;
