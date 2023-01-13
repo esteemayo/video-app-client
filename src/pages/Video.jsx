@@ -217,6 +217,7 @@ const Subscribe = styled.button`
   background-color: #cc1a00;
   color: #fff;
   border-radius: 0.3rem;
+  outline-color: #555;
   cursor: pointer;
 `;
 
