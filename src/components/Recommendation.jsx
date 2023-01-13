@@ -15,7 +15,9 @@ const Recommendation = ({ tags }) => {
 
   return (
     <Container>
-      <Card type='sm' />
+      {recommendedVideos?.map((item) => {
+        return <Card key={item._id} {...item} type='sm' />
+      })}
     </Container>
   );
 };
