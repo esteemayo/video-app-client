@@ -39,7 +39,7 @@ const Navbar = () => {
           )}
         </Wrapper>
       </Container>
-      {!open && <Upload />}
+      {!open && <Upload onClose={setOpen} />}
     </>
   );
 };
