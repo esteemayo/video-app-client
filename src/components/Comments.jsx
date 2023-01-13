@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
-import { fetchCommentsOnVideo, reset } from 'features/video/videoSlice';
+import { fetchCommentsOnVideo } from 'features/video/videoSlice';
 
 const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
@@ -12,7 +12,6 @@ const Comments = ({ videoId }) => {
 
   useEffect(() => {
     dispatch(fetchCommentsOnVideo(videoId));
-    dispatch(reset());
   }, [videoId, dispatch]);
 
   return (
