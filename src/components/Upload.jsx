@@ -48,7 +48,7 @@ const Upload = ({ onClose }) => {
           rows={8}
           placeholder='Description'
           onChange={(e) => setDesc(e.target.value)}
-        />
+          onChange={handleChange}
         <Input
           type='text'
           onChange={handleTags}
