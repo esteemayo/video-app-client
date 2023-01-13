@@ -10,6 +10,10 @@ const Upload = ({ onClose }) => {
   const [imgPerc, setImgPerc] = useState(0);
   const [videoPerc, setVideoPerc] = useState(0);
 
+  const handleTags = (e) => {
+    setTags(e.target.value.split(','));
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -31,7 +35,11 @@ const Upload = ({ onClose }) => {
           placeholder='Description'
           onChange={(e) => setDesc(e.target.value)}
         />
-        <Input type='text' placeholder='Separate the tags with commas.' />
+        <Input
+          type='text'
+          onChange={handleTags}
+          placeholder='Separate the tags with commas.'
+        />
         <Label>Image</Label>
         <Input
           type='file'
