@@ -29,6 +29,57 @@ const Upload = ({ onClose }) => {
     setTags(e.target.value.split(','));
   };
 
+  const uploadFile = useCallback((file, urlType) => {
+    const fileName = `${new Date().getTime()}-${file.name}`;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, `uploads/${fileName}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on('state_changed',
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        urlType === 'imgUrl' ? setImgPerc(progress) : setVideoPerc(progress);
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+
+          default:
+            break;
+        };
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log('File available at', downloadURL);
+          setInputs((prev) => ({ ...prev, urlType: downloadURL }));
+
+          const newVideo = {
+            ...inputs,
+            tags,
+          };
+
+          dispatch(createNewVideo(newVideo));
+        });
+      }
+    );
+  }, [dispatch, inputs, tags]);
+
+  useEffect(() => {
+    video && uploadFile(video, 'videoUrl');
+  }, [video, uploadFile]);
+
+  useEffect(() => {
+    img && uploadFile(img, 'imgUrl');
+  }, [img, uploadFile]);
+
   return (
     <Container>
       <Wrapper>
