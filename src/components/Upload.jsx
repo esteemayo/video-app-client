@@ -14,9 +14,9 @@ const Upload = ({ onClose }) => {
   const dispatch = useDispatch();
   const [img, setImg] = useState(null);
   const [tags, setTags] = useState([]);
-  const [inputs, setInputs] = useState(null);
   const [video, setVideo] = useState(null);
   const [imgPerc, setImgPerc] = useState(0);
+  const [inputs, setInputs] = useState(null);
   const [videoPerc, setVideoPerc] = useState(0);
 
   const handleTags = (e) => {
