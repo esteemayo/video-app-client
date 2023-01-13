@@ -19,6 +19,11 @@ const Upload = ({ onClose }) => {
   const [inputs, setInputs] = useState(null);
   const [videoPerc, setVideoPerc] = useState(0);
 
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleTags = (e) => {
     setTags(e.target.value.split(','));
   };
