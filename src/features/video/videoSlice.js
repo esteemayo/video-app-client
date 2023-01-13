@@ -186,7 +186,7 @@ export const videoSlice = createSlice({
       .addCase(fetchCommentsOnVideo.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.video = payload;
+        state.comments = payload;
       })
       .addCase(fetchCommentsOnVideo.rejected, (state, { payload }) => {
         state.isLoading = false
