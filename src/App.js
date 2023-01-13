@@ -6,7 +6,7 @@ import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
 import ProtectedRoute from 'utils/ProtectedRoute';
 import { darkTheme, lightTheme } from 'utils/Theme';
-import { Home, SharedLayout, SignIn, Video } from 'pages';
+import { Home, Search, SharedLayout, SignIn, Video } from 'pages';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -34,6 +34,7 @@ function App() {
                   <Route path='video'>
                     <Route path=':slug' element={<Video />} />
                   </Route>
+                  <Route path='search' element={<Search />} />
                 </Route>
                 cards
               </Routes>
