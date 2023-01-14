@@ -156,6 +156,7 @@ const SignIn = () => {
         />
         <Input
           type='email'
+          name='email'
           placeholder='email'
           onChange={handleChange}
         />
