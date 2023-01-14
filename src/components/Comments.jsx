@@ -21,6 +21,7 @@ const Comments = ({ videoId }) => {
     };
 
     dispatch(createComment({ videoId, comment }));
+    setDesc('');
   };
 
   useEffect(() => {
