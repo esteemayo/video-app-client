@@ -68,7 +68,6 @@ const SignIn = () => {
       username,
       email,
       password,
-      passwordConfirm,
     };
 
     dispatch(registerUser({ credentials, toast }));
