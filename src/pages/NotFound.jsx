@@ -1,8 +1,13 @@
+import styled from 'styled-components';
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <Container>NotFound</Container>
   );
 };
+
+const Container = styled.div``;
+
+const Image = styled.img``;
 
 export default NotFound;
