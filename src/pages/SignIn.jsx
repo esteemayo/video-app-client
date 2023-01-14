@@ -72,7 +72,7 @@ const SignIn = () => {
     uploadTask.on('state_changed',
       (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setPerc(progress);
+        setPerc(Math.round(progress));
         switch (snapshot.state) {
           case 'paused':
             console.log('Upload is paused');
