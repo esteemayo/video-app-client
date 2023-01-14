@@ -144,7 +144,7 @@ const SignIn = () => {
             id='file'
             type='file'
             accept='image/*'
-            onChange={(e) => setFile(e.target.value)}
+            onChange={(e) => setFile(e.target.files[0])}
           />
         )}
         <Input
