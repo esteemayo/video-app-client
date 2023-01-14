@@ -136,12 +136,16 @@ const SignIn = () => {
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
-        <Input
-          id='file'
-          type='file'
-          accept='image/*'
-          onChange={(e) => setFile(e.target.value)}
-        />
+        {perc > 0 ? (
+          `Uploading: ${perc}%`
+        ) : (
+          <Input
+            id='file'
+            type='file'
+            accept='image/*'
+            onChange={(e) => setFile(e.target.value)}
+          />
+        )}
         <Input
           type='text'
           name='name'
