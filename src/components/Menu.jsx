@@ -19,7 +19,7 @@ import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 
-import logo from '../img/logo.png';
+import logo from 'img/logo.png';
 import { setLogout } from 'features/user/userSlice';
 
 const Menu = ({ darkMode, setDarkMode }) => {
