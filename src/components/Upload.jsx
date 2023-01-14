@@ -38,7 +38,7 @@ const Upload = ({ onClose }) => {
     const fileName = `${new Date().getTime()}-${file.name}`;
 
     const storage = getStorage(app);
-    const storageRef = ref(storage, `uploads/${fileName}`);
+    const storageRef = ref(storage, `videos/${fileName}`);
 
     const uploadTask = uploadBytesResumable(storageRef, file);
 
