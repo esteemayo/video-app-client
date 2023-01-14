@@ -150,6 +150,7 @@ const SignIn = () => {
         />
         <Input
           type='text'
+          name='username'
           placeholder='username'
           onChange={(e) => setUsername(e.target.value)}
         />
