@@ -36,7 +36,6 @@ function App() {
                     <Route path=':slug' element={<Video />} />
                   </Route>
                 </Route>
-                cards
               </Routes>
             </Wrapper>
           </Main>
