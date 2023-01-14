@@ -64,7 +64,7 @@ const SignIn = () => {
     e.preventDefault();
 
     const credentials = {
-      name,
+      ...inputs,
       username,
       email,
       password,
