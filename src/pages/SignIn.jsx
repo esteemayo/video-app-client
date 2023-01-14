@@ -100,8 +100,6 @@ const SignIn = () => {
 
     const credentials = {
       ...inputs,
-      username,
-      password,
     };
 
     dispatch(registerUser({ credentials, toast }));
