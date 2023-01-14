@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
 
 import { app, auth, provider } from '../firebase';
 import { googleSignIn, loginUser, registerUser, reset } from 'features/user/userSlice';
