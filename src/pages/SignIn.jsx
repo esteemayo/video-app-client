@@ -18,7 +18,12 @@ const SignIn = () => {
   const [email, setEmail] = useState(null);
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const [passwordConfirm, setPasswordConfirm] = useState(null);
+  // const [passwordConfirm, setPasswordConfirm] = useState(null);
+
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
