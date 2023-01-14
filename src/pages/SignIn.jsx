@@ -141,12 +141,18 @@ const SignIn = () => {
             </Filler>
           </ProgressBar>
         ) : (
-          <Input
-            id='file'
-            type='file'
-            accept='image/*'
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+        <Input
+          id='file'
+          type='file'
+          accept='image/*'
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        {perc > 0 && (
+          <ProgressBar>
+            <Filler perc={perc}>
+              <Label>{`${perc}%`}</Label>
+            </Filler>
+          </ProgressBar>
         )}
         <Input
           type='text'
