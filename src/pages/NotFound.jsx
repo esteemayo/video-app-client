@@ -9,7 +9,11 @@ const NotFound = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Image = styled.img``;
 
