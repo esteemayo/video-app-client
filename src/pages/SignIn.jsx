@@ -230,6 +230,30 @@ const Input = styled.input`
   color: ${({ theme }) => theme.text};
 `;
 
+const ProgressBar = styled.div`
+  width: 100%;
+  height: 1.5rem;
+  background-color: #e0e0de;
+  border-radius: 0.75rem;
+`;
+
+const Filler = styled.div`
+  width: ${({ percentage }) => percentage}%;
+  height: 100%;
+  background-color: #3ea6ff;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Label = styled.span`
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.5rem;
+`
+
 const Button = styled.button`
   border: none;
   display: inline-block;
