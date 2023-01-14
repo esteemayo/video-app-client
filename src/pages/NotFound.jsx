@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import img from 'img/404.png';
 
 const NotFound = () => {
   return (
-    <Container>NotFound</Container>
+    <Container>
+      <Image src={img} alt=''/>
+    </Container>
   );
 };
 
