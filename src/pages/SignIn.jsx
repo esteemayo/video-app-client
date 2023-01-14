@@ -96,7 +96,7 @@ const SignIn = () => {
         <Input
           type='text'
           placeholder='name'
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleChange}
         />
         <Input
           type='text'
@@ -106,7 +106,7 @@ const SignIn = () => {
         <Input
           type='email'
           placeholder='email'
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleChange}
         />
         <Input
           type='password'
@@ -116,7 +116,7 @@ const SignIn = () => {
         <Input
           type='password'
           placeholder='confirm password'
-          onChange={(e) => setPasswordConfirm(e.target.value)}
+          onChange={handleChange}
         />
         <Button onClick={handleRegister}>Sign up</Button>
       </Wrapper>
