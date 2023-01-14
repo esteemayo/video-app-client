@@ -14,7 +14,13 @@ const Comments = ({ videoId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createComment({ videoId, desc }));
+
+    const comment = {
+      desc,
+      video: videoId,
+    };
+
+    dispatch(createComment({ videoId, comment }));
   };
 
   useEffect(() => {
