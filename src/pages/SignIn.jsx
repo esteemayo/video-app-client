@@ -66,7 +66,6 @@ const SignIn = () => {
     const credentials = {
       ...inputs,
       username,
-      email,
       password,
     };
 
