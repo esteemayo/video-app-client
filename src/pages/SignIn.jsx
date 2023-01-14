@@ -266,6 +266,10 @@ const Button = styled.button`
   color: ${({ theme }) => theme.textSoft};
   outline-color: #555;
   cursor: pointer;
+
+  &:disabled {
+    background-color: red;
+  }
 `;
 
 const More = styled.div`
