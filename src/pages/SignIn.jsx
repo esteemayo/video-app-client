@@ -14,8 +14,9 @@ const SignIn = () => {
   const { user, isSuccess, isError } = useSelector(((state) => ({ ...state.user })));
 
   const [file, setFile] = useState(null);
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [inputs, setInputs] = useState(null);
+  // const [name, setName] = useState(null);
+  // const [email, setEmail] = useState(null);
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
   // const [passwordConfirm, setPasswordConfirm] = useState(null);
