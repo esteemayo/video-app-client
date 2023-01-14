@@ -33,7 +33,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <Container>
+    <Container user={user}>
       <Wrapper>
         <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
           <Logo>
@@ -138,7 +138,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
 const Container = styled.div`
   flex: 1;
-  height: 100vh;
+  height: ${({user})=> user ? '100vh' : '100%'};
   font-size: 1.4rem;;
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
