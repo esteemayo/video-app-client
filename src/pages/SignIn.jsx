@@ -124,6 +124,7 @@ const SignIn = () => {
         <SubTitle>to continue to YouTube</SubTitle>
         <Input
           type='text'
+          name='username'
           placeholder='username'
           onChange={(e) => setUsername(e.target.value)}
         />
