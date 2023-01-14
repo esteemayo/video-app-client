@@ -61,6 +61,40 @@ const SignIn = () => {
       });
   };
 
+  const uploadFile = (file) => {
+    const fileName = `${Date.now()}-${file.name}`;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, `users/${fileName}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on('state_changed',
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setPerc(progress);
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+          default:
+            break;
+        }
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setInputs((prev) => ({ ...prev, img: downloadURL }));
+        });
+      }
+    );
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -72,6 +106,10 @@ const SignIn = () => {
 
     dispatch(registerUser({ credentials, toast }));
   };
+
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file]);
 
   useEffect(() => {
     user && isSuccess && navigate('/');
