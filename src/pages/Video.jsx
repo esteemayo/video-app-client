@@ -13,7 +13,7 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 import Comments from 'components/Comments';
 import Recommendation from 'components/Recommendation';
 import { subscription, unsubscribe } from 'features/user/userSlice';
-import { dislikeVideo, fetchVideo, likeVideo } from 'features/video/videoSlice';
+import { dislikeVideo, fetchVideo, likeVideo, updateViews } from 'features/video/videoSlice';
 
 const Video = () => {
   const { slug } = useParams();
@@ -41,6 +41,10 @@ const Video = () => {
   useEffect(() => {
     dispatch(fetchVideo(slug));
   }, [slug, dispatch]);
+
+  useEffect(() => {
+    dispatch(updateViews(videoId));
+  }, [videoId, dispatch]);
 
   return (
     <Container>
