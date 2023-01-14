@@ -168,6 +168,7 @@ const SignIn = () => {
         />
         <Input
           type='password'
+          name='passwordConfirm'
           placeholder='confirm password'
           onChange={handleChange}
         />
