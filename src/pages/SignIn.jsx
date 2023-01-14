@@ -154,7 +154,7 @@ const SignIn = () => {
           type='text'
           name='username'
           placeholder='username'
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={handleChange}
         />
         <Input
           type='email'
@@ -166,7 +166,7 @@ const SignIn = () => {
           type='password'
           name='password'
           placeholder='password'
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChange}
         />
         <Input
           type='password'
