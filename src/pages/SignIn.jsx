@@ -138,7 +138,11 @@ const SignIn = () => {
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
         {perc > 0 ? (
-          `Uploading: ${perc}%`
+          <ProgressBar>
+            <Filler percentage={perc}>
+              <Label>{`${perc}%`}</Label>
+            </Filler>
+          </ProgressBar>
         ) : (
           <Input
             id='file'
