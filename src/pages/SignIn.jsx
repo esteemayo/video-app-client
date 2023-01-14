@@ -87,6 +87,7 @@ const SignIn = () => {
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
+        <Input type='file' onChange={(e) => setFile(e.target.value)} />
         <Input
           type='text'
           placeholder='name'
