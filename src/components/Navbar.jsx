@@ -24,7 +24,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
               />
               <Avatar src={user.img} alt='' />
-              {user.username}
+              {user.name}
             </User>
           ) : (
             <Link to='signin' style={{ textDecoration: 'none' }}>
