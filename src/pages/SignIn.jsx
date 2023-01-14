@@ -49,7 +49,7 @@ const SignIn = () => {
       .then((result) => {
         const credentials = {
           name: result.user.displayName,
-          username: result.user.displayName.split(' ')[0],
+          username: result.user.displayName.split(' ')[0].toLowerCase(),
           email: result.user.email,
           img: result.user.photoURL,
         };
