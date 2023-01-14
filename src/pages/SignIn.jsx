@@ -144,6 +144,7 @@ const SignIn = () => {
         />
         <Input
           type='text'
+          name='name'
           placeholder='name'
           onChange={handleChange}
         />
