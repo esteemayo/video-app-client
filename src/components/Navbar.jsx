@@ -46,6 +46,7 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.bgLighter};
+  z-index: 1000;
 `;
 
 const Wrapper = styled.div`
