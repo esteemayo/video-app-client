@@ -6,7 +6,7 @@ import Menu from 'components/Menu';
 import Navbar from 'components/Navbar';
 import ProtectedRoute from 'utils/ProtectedRoute';
 import { darkTheme, lightTheme } from 'utils/Theme';
-import { Home, Search, SharedLayout, SignIn, Video } from 'pages';
+import { Home, NotFound, Search, SharedLayout, SignIn, Video } from 'pages';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -36,6 +36,7 @@ function App() {
                     <Route path=':slug' element={<Video />} />
                   </Route>
                 </Route>
+                <Route path='*' element={<NotFound />} />
               </Routes>
             </Wrapper>
           </Main>
