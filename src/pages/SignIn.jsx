@@ -20,7 +20,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const { user, isSuccess, isError } = useSelector(((state) => ({ ...state.user })));
 
-  const [perc, setPerc] = useState(0);
+  const [perc, setPerc] = useState(100);
   const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState(null);
   // const [name, setName] = useState(null);
@@ -139,7 +139,7 @@ const SignIn = () => {
         <Title>or</Title>
         {perc > 0 ? (
           <ProgressBar>
-            <Filler percentage={perc}>
+            <Filler perc={perc}>
               <Label>{`${perc}%`}</Label>
             </Filler>
           </ProgressBar>
@@ -236,13 +236,13 @@ const Input = styled.input`
 
 const ProgressBar = styled.div`
   width: 100%;
-  height: 1.5rem;
+  height: 1.3rem;
   background-color: #e0e0de;
   border-radius: 0.75rem;
 `;
 
 const Filler = styled.div`
-  width: ${({ percentage }) => percentage}%;
+  width: ${({ perc }) => perc}%;
   height: 100%;
   background-color: #3ea6ff;
   border-radius: inherit;
@@ -253,10 +253,11 @@ const Filler = styled.div`
 
 const Label = styled.span`
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
   padding: 0.5rem;
-`
+  letter-spacing: 0.7px;
+`;
 
 const Button = styled.button`
   border: none;
