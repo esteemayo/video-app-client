@@ -20,8 +20,10 @@ const Comments = ({ videoId }) => {
       video: videoId,
     };
 
-    dispatch(createComment({ videoId, comment }));
-    setDesc('');
+    if (desc.trim() !== '') {
+      dispatch(createComment({ videoId, comment }));
+      setDesc('');
+    }
   };
 
   useEffect(() => {
