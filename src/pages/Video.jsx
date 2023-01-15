@@ -82,7 +82,7 @@ const Video = () => {
         <Hr />
         <Channel>
           <ChannelInfo>
-            <Image src={video.user?.img} alt='' />
+            <Image src={video.user?.img ?? userDefaultImg} alt='' />
             <ChannelDetail>
               <ChannelName>{video.user?.name}</ChannelName>
               <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
