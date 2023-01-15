@@ -26,7 +26,7 @@ const Video = () => {
   const videoId = video?._id;
 
   const handleLike = () => {
-    dispatch(likeVideo({ videoId, userId }));
+    userId && dispatch(likeVideo({ videoId, userId }));
   };
 
   const handleDislike = () => {
