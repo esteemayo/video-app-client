@@ -6,7 +6,7 @@ import userDefaultImg from 'img/user-default.jpg';
 const Comment = ({ desc, user, createdAt }) => {
   return (
     <Container>
-      <Avatar src={user.img} alt='' />
+      <Avatar src={user.img ?? userDefaultImg} alt='' />
       <Details>
         <Name>
           {user.name} <Date>{format(createdAt)}</Date>
