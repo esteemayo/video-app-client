@@ -11,6 +11,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 import Comments from 'components/Comments';
+import userDefaultImg from 'img/user-default.jpg';
 import Recommendation from 'components/Recommendation';
 import { subscription, unsubscribe } from 'features/user/userSlice';
 import { dislikeVideo, fetchVideo, likeVideo, updateViews } from 'features/video/videoSlice';
@@ -81,10 +82,7 @@ const Video = () => {
         <Hr />
         <Channel>
           <ChannelInfo>
-            <Image
-              src={video.user?.img}
-              alt=''
-            />
+            <Image src={video.user?.img} alt='' />
             <ChannelDetail>
               <ChannelName>{video.user?.name}</ChannelName>
               <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
