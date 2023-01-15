@@ -20,6 +20,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const { user, isSuccess, isError } = useSelector(((state) => ({ ...state.user })));
 
+  const usernameRef = useRef();
   const [perc, setPerc] = useState(0);
   const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState(null);
