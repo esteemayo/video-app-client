@@ -62,7 +62,7 @@ export const subscription = createAsyncThunk(
   });
 
 export const unsubscribe = createAsyncThunk(
-  'auth/unsubscribe',
+  'users/unsubscribe',
   async (channelId, { rejectWithValue }) => {
     try {
       await userAPI.unsubscribe(channelId);
