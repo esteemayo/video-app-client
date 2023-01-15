@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Comment from './Comment';
+import userDefaultImg from 'img/user-default.jpg';
 import { createComment, fetchCommentsOnVideo } from 'features/video/videoSlice';
 
 const Comments = ({ videoId }) => {
