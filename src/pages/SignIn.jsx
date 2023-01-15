@@ -81,7 +81,7 @@ const SignIn = () => {
             break;
           default:
             break;
-        }
+        };
       },
       (error) => {
         console.log(error);
