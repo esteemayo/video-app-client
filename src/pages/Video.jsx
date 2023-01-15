@@ -65,7 +65,7 @@ const Video = () => {
               )} {video.likes?.length}
             </Button>
             <Button onClick={handleDislike}>
-              {video.dislikes?.includes(user?._id) ? (
+              {video.dislikes?.includes(userId) ? (
                 <ThumbDownIcon />
               ) : (
                 < ThumbDownOffAltOutlinedIcon />
