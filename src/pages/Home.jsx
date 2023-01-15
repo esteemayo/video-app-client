@@ -21,7 +21,7 @@ const Home = ({ type }) => {
         dispatch(fetchRandomVideos());
         return;
 
-      case 'trend':
+      case 'trends':
         dispatch(fetchTrendingVideos());
         return;
 
