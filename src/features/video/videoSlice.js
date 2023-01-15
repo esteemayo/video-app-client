@@ -321,13 +321,19 @@ export const videoSlice = createSlice({
           }
         }
       })
-      .addCase(dislikeVideo.fulfilled, (state, { payload }) => {
-        if (!state.video.dislikes.includes(payload)) {
-          state.video.dislikes.push(payload);
-          state.video.likes.splice(
-            state.video.likes.findIndex((userId) => userId === payload),
-            1,
-          );
+      .addCase(dislikeVideo.fulfilled, (state, { meta, payload }) => {
+        const {
+          arg: { userId },
+        } = meta;
+
+        if (userId) {
+          if (!state.video.dislikes.includes(payload)) {
+            state.video.dislikes.push(payload);
+            state.video.likes.splice(
+              state.video.likes.findIndex((userId) => userId === payload),
+              1,
+            );
+          }
         }
       })
   },
