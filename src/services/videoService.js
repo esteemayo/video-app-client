@@ -34,6 +34,9 @@ export const createVideo = (video) => http.post(apiEndpoint, video);
 export const createCommentOnVideo = (videoId, comment) =>
   http.post(`${videoUrl(videoId)}/comments`, comment);
 
+export const updateVideo = (videoId, video) =>
+  http.patch(videoUrl(videoId), video);
+
 export const views = (videoId) =>
   http.patch(`${apiEndpoint}/view/${videoId}`);
 
