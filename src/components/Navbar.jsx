@@ -24,7 +24,7 @@ const Navbar = () => {
                 style={{ fontSize: '3rem' }}
                 onClick={() => setOpen(false)}
               />
-              <Avatar src={user.img} alt='' />
+              <Avatar src={user.img ?? userDefaultImg} alt='' />
               {user.name}
             </User>
           ) : (
