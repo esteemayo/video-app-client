@@ -4,10 +4,7 @@ import styled from 'styled-components';
 const Comment = ({ desc, user, createdAt }) => {
   return (
     <Container>
-      <Avatar
-        src={user.img}
-        alt=''
-      />
+      <Avatar src={user.img} alt='' />
       <Details>
         <Name>
           {user.name} <Date>{format(createdAt)}</Date>
