@@ -36,3 +36,5 @@ export const createCommentOnVideo = (videoId, comment) =>
 
 export const views = (videoId) =>
   http.patch(`${apiEndpoint}/view/${videoId}`);
+
+export const deleteVideo = (videoId) => http.delete(videoUrl(videoId));
