@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Card from 'components/Card';
 import { searchVideos } from 'features/video/videoSlice';
 
-function useQuery() {
+const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
