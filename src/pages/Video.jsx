@@ -26,11 +26,11 @@ const Video = () => {
   const videoId = video?._id;
 
   const handleLike = () => {
-    userId && dispatch(likeVideo({ videoId, userId }));
+    user && dispatch(likeVideo({ videoId, userId }));
   };
 
   const handleDislike = () => {
-    userId && dispatch(dislikeVideo({ videoId, userId }));
+    user && dispatch(dislikeVideo({ videoId, userId }));
   };
 
   const handleSubscribe = (channelId) => {
