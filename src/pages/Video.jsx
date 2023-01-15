@@ -55,7 +55,7 @@ const Video = () => {
         </VideoWrapper>
         <Title>{video.title}</Title>
         <Details>
-          <Info>{video.views} views • {format(video.createAt)}</Info>
+          <Info>{video.views} views • {format(video.createdAt)}</Info>
           <Buttons>
             <Button onClick={handleLike}>
               {video.likes?.includes(user?._id) ? (
