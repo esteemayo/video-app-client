@@ -52,7 +52,7 @@ const Input = styled.input`
   font-family: inherit;
   background-color: transparent;
   color: inherit;
-  caret-color: #ccc;
+  caret-color: ${({ theme }) => theme.text};
 `;
 
 export default Search;
