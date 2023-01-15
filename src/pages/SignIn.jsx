@@ -183,7 +183,12 @@ const SignIn = () => {
           placeholder='confirm password'
           onChange={handleChange}
         />
-        <Button disabled={perc > 0 && perc < 100} onClick={handleRegister}>Sign up</Button>
+        <Button
+          disabled={perc > 0 && perc < 100}
+          onClick={handleRegister}
+        >
+          Sign up
+        </Button>
       </Wrapper>
       <More>
         English(USA)
