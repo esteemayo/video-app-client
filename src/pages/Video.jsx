@@ -30,7 +30,7 @@ const Video = () => {
   };
 
   const handleDislike = () => {
-    dispatch(dislikeVideo({ videoId, userId }));
+    userId && dispatch(dislikeVideo({ videoId, userId }));
   };
 
   const handleSubscribe = (channelId) => {
