@@ -27,7 +27,7 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
       <Container type={type}>
         <Image
           type={type}
-          src={imgUrl}
+          src={imgUrl ?? userDefaultImg}
           alt=''
         />
         <Details type={type}>
