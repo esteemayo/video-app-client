@@ -7,6 +7,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 
 import Search from './Search';
 import Upload from './Upload';
+import userDefaultImg from 'img/user-default.jpg';
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
