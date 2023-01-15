@@ -304,6 +304,7 @@ export const videoSlice = createSlice({
           state.videos.map((item) => item._id === videoId ? payload : item);
           state.recommendedVideos.map((item) => item._id === videoId ? payload : item);
           state.video = payload;
+          state.video.views += 1;
         }
       })
       .addCase(updateViews.rejected, (state, { payload }) => {
