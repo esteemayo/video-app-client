@@ -50,7 +50,7 @@ export const googleSignIn = createAsyncThunk(
   });
 
 export const subscription = createAsyncThunk(
-  'auth/subscribe',
+  'users/subscribe',
   async (channelId, { rejectWithValue }) => {
     try {
       await userAPI.subscribe(channelId);
