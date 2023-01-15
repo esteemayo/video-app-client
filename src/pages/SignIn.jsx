@@ -42,7 +42,7 @@ const SignIn = () => {
     dispatch(loginUser({ credentials, toast }));
   };
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credentials = {
