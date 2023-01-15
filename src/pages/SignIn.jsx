@@ -109,6 +109,10 @@ const SignIn = () => {
   }, [file]);
 
   useEffect(() => {
+    usernameRef.current.focus();
+  }, []);
+
+  useEffect(() => {
     user && isSuccess && navigate('/');
     isError && toast.error(isError);
     dispatch(reset());
