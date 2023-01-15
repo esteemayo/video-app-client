@@ -22,7 +22,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<SharedLayout />}>
                   <Route index element={<Home type='random' />} />
-                  <Route path='trends' element={<Home type='trend' />} />
+                  <Route path='trends' element={<Home type='trends' />} />
                   <Route path='subscriptions' element={<Home type='subscriptions' />} />
                   <Route path='search' element={<Search />} />
                   <Route path='signin'
