@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Moment from 'react-moment';
 import { format } from 'timeago.js';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
