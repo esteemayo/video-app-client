@@ -122,6 +122,7 @@ const SignIn = () => {
         <Input
           type='text'
           name='username'
+          ref={usernameRef}
           placeholder='username'
           onChange={(e) => setUsername(e.target.value)}
         />
