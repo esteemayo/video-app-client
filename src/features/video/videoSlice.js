@@ -127,11 +127,8 @@ export const likeVideo = createAsyncThunk(
   'videos/likeVideo',
   async ({ videoId, userId }, { rejectWithValue }) => {
     try {
-      const { data } = await userAPI.likeVideo(videoId);
-      return {
-        data: data.video,
-        userId,
-      };
+      await userAPI.likeVideo(videoId);
+      return userId
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
@@ -142,11 +139,8 @@ export const dislikeVideo = createAsyncThunk(
   'videos/dislikeVideo',
   async ({ videoId, userId }, { rejectWithValue }) => {
     try {
-      const { data } = await userAPI.dislikeVideo(videoId);
-      return {
-        data: data.video,
-        userId,
-      };
+      await userAPI.dislikeVideo(videoId);
+      return userId
     } catch (err) {
       const message = err.response.data;
       return rejectWithValue(message);
@@ -313,19 +307,19 @@ export const videoSlice = createSlice({
         state.isError = payload.message;
       })
       .addCase(likeVideo.fulfilled, (state, { payload }) => {
-        if (!state.video.likes.includes(payload.userId)) {
-          state.video.likes.push(payload.userId);
+        if (!state.video.likes.includes(payload)) {
+          state.video.likes.push(payload);
           state.video.dislikes.splice(
-            state.video.dislikes.findIndex((userId) => userId === payload.userId),
+            state.video.dislikes.findIndex((userId) => userId === payload),
             1,
           );
         }
       })
       .addCase(dislikeVideo.fulfilled, (state, { payload }) => {
-        if (!state.video.dislikes.includes(payload.userId)) {
-          state.video.dislikes.push(payload.userId);
+        if (!state.video.dislikes.includes(payload)) {
+          state.video.dislikes.push(payload);
           state.video.likes.splice(
-            state.video.likes.findIndex((userId) => userId === payload.userId),
+            state.video.likes.findIndex((userId) => userId === payload),
             1,
           );
         }
