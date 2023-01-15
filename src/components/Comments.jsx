@@ -34,7 +34,7 @@ const Comments = ({ videoId }) => {
   return (
     <Container>
       <NewComment>
-        <Avatar src={user.img} alt='' />
+        <Avatar src={user.img ?? userDefaultImg} alt='' />
         <Form onSubmit={handleSubmit}>
           <Input
             type='text'
