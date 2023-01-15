@@ -1,6 +1,8 @@
 import { format } from 'timeago.js';
 import styled from 'styled-components';
 
+import userDefaultImg from 'img/user-default.jpg';
+
 const Comment = ({ desc, user, createdAt }) => {
   return (
     <Container>
