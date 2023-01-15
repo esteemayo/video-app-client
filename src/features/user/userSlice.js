@@ -160,7 +160,6 @@ export const authSlice = createSlice({
       .addCase(subscription.fulfilled, (state, { payload }) => {
         if (!state.user.subscribedUsers.includes(payload)) {
           state.user.subscribedUsers.push(payload);
-          state.user.subscribers++;
         }
       })
       .addCase(unsubscribe.fulfilled, (state, { payload }) => {
