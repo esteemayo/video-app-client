@@ -10,7 +10,7 @@ const Recommendation = ({ tags }) => {
   const { recommendedVideos } = useSelector((state) => ({ ...state.video }));
 
   useEffect(() => {
-    dispatch(fetchRecommendedVideos(tags));
+    tags && dispatch(fetchRecommendedVideos(tags));
   }, [tags, dispatch]);
 
   return (
