@@ -119,6 +119,7 @@ const Upload = ({ onClose }) => {
         />
         <Input
           type='text'
+          name='tags'
           onChange={handleTags}
           placeholder='Separate the tags with commas.'
         />
