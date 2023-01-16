@@ -263,7 +263,6 @@ export const videoSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.videos.push(payload);
-        state.video = payload;
       })
       .addCase(createNewVideo.rejected, (state, { payload }) => {
         state.isLoading = false
