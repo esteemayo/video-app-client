@@ -24,7 +24,13 @@ function App() {
                 <Route path='/' element={<SharedLayout />}>
                   <Route index element={<Home type='random' />} />
                   <Route path='trends' element={<Home type='trends' />} />
-                  <Route path='subscriptions' element={<Home type='subscriptions' />} />
+                  <Route path='subscriptions'
+                    element={
+                      <AuthRoute>
+                        <Home type='subscriptions' />
+                      </AuthRoute>
+                    }
+                  />
                   <Route path='search' element={<Search />} />
                   <Route path='signin'
                     element={
