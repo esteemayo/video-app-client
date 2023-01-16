@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   getStorage,
   ref,
@@ -10,13 +9,10 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
-import { createNewVideo } from 'features/video/videoSlice';
+import { createVideo } from 'services/videoService';
 
 const Upload = ({ onClose }) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { video: singleVideo, isSuccess } =
-    useSelector((state) => ({ ...state.video }));
 
   const [img, setImg] = useState(null);
   const [tags, setTags] = useState([]);
@@ -77,9 +73,9 @@ const Upload = ({ onClose }) => {
       tags,
     };
 
-    dispatch(createNewVideo(newVideo));
+    const { data } = await createVideo({ ...newVideo });
     onClose(true);
-    isSuccess && await navigate(`/video/${singleVideo?.slug}`);
+    navigate(`/video/${data.video.slug}`);
   };
 
   useEffect(() => {
