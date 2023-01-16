@@ -95,11 +95,12 @@ const Upload = ({ onClose }) => {
       <Wrapper>
         <Close onClick={() => onClose(true)}>X</Close>
         <Title>Upload a New Video</Title>
-        <Label>Video</Label>
+        <Label htmlFor='video'>Video</Label>
         {videoPerc > 0 ? (
           `Uploading: ${videoPerc}%`
         ) : (
           <Input
+            id='video'
             type='file'
             accept='video/*'
             onChange={(e) => setVideo(e.target.files[0])}
