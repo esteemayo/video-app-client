@@ -22,8 +22,15 @@ const LoadingToRedirect = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+`;
 
-const Text = styled.h2``;
+const Text = styled.h2`
+  font-size: 3rem;
+  color: ${({ theme }) => theme.textSoft};
+`;
 
 export default LoadingToRedirect;
