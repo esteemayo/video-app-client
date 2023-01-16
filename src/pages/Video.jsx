@@ -58,7 +58,7 @@ const Video = () => {
           <Info>{video.views} views • {format(video.createdAt)}</Info>
           <Buttons>
             <Button onClick={handleLike}>
-              {video.likes?.includes(user?._id) ? (
+              {video.likes?.includes(userId) ? (
                 <ThumbUpIcon />
               ) : (
                 <ThumbUpOutlinedIcon />
