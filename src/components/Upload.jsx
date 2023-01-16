@@ -124,12 +124,12 @@ const Upload = ({ onClose }) => {
           onChange={handleTags}
           placeholder='Separate the tags with commas.'
         />
-        <Label htmlFor='file'>Image</Label>
+        <Label htmlFor='img'>Image</Label>
         {imgPerc > 0 ? (
           `Uploading: ${imgPerc}%`
         ) : (
           <Input
-            id='file'
+            id='img'
             type='file'
             accept='image/*'
             onChange={(e) => setImg(e.target.files[0])}
