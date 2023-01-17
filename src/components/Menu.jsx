@@ -138,7 +138,8 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
 const Container = styled.div`
   flex: 1;
-  height: ${({ user }) => user ? '100vh' : '100%'};
+  height: 100vh;
+  min-height: ${({ user }) => user ? '100vh' : '103vh'};
   font-size: 1.4rem;
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
