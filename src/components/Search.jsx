@@ -52,6 +52,8 @@ const Input = styled.input`
   font-family: inherit;
   background-color: transparent;
   color: inherit;
+  -webkit-box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
   caret-color: ${({ theme }) => theme.text};
 `;
 
