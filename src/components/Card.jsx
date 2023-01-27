@@ -1,3 +1,4 @@
+import millify from 'millify';
 import { format } from 'timeago.js';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -38,7 +39,7 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
           <Texts>
             <Title>{title}</Title>
             <ChannelName>{channel?.name ?? user?.name}</ChannelName>
-            <Info>{views} views • {format(createdAt)}</Info>
+            <Info>{millify(views)} views • {format(createdAt)}</Info>
           </Texts>
         </Details>
       </Container>
