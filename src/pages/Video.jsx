@@ -102,12 +102,14 @@ const Video = () => {
               </Description>
             </ChannelDetail>
           </ChannelInfo>
-          <Subscribe onClick={() => user ? handleSubscribe(video.user?._id) : null}>
-            {user?.subscribedUsers?.includes(video.user?._id)
-              ? 'SUBSCRIBED'
-              : 'SUBSCRIBE'
-            }
-          </Subscribe>
+          {user._id !== video.user._id && (
+            <Subscribe onClick={() => user ? handleSubscribe(video.user?._id) : null}>
+              {user?.subscribedUsers?.includes(video.user?._id)
+                ? 'SUBSCRIBED'
+                : 'SUBSCRIBE'
+              }
+            </Subscribe>
+          )}
         </Channel>
         <Hr />
         <Comments videoId={videoId} />
