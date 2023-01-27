@@ -13,7 +13,7 @@ export const clearStorage = () => {
 }
 
 export const excerpts = (str, count) => {
-  if (str.length > count) {
+  if (str?.length > count) {
     str = `${str.split(' ').splice(0, count).join(' ')}...`;
   }
   return str;
