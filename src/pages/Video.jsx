@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { format } from 'timeago.js';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +10,7 @@ import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
+import { excerpts } from 'utils';
 import Comments from 'components/Comments';
 import userDefaultImg from 'img/user-default.jpg';
 import Recommendation from 'components/Recommendation';
@@ -21,6 +22,8 @@ const Video = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.user }));
   const { video } = useSelector((state) => ({ ...state.video }));
+
+  const [showMore, setShowMore] = useState(false);
 
   const userId = user?._id;
   const videoId = video?._id;
@@ -86,7 +89,11 @@ const Video = () => {
             <ChannelDetail>
               <ChannelName>{video.user?.name}</ChannelName>
               <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
-              <Description>{video.desc}</Description>
+              <Description>
+                {showMore ? video.desc : excerpts(video.desc, 50)}
+                <ShowButton>Show more</ShowButton>
+                <ShowButton>Show less</ShowButton>
+              </Description>
             </ChannelDetail>
           </ChannelInfo>
           <Subscribe onClick={() => user ? handleSubscribe(video.user?._id) : null}>
@@ -193,6 +200,16 @@ const ChannelCounter = styled.span`
 
 const Description = styled.p`
   font-size: 1.4rem;
+`;
+
+const ShowButton = styled.button`
+  border: none;
+  display: inline-block;
+  font-weight: 600;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: ${({ theme }) => theme.textSoft};
+  cursor: pointer;
 `;
 
 const Subscribe = styled.button`
