@@ -92,7 +92,7 @@ const Video = () => {
             <ChannelDetail>
               <ChannelName>{video.user?.name}</ChannelName>
               <ChannelCounter>
-                {millify(video.user?.subscribers)} subscribers
+                {millify(video.user?.subscribers, { precision: 2 })} subscribers
               </ChannelCounter>
               <Description>
                 {showMore ? video.desc : excerpts(video.desc, 50)} {' '}
