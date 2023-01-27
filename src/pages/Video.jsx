@@ -90,9 +90,10 @@ const Video = () => {
               <ChannelName>{video.user?.name}</ChannelName>
               <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
               <Description>
-                {showMore ? video.desc : excerpts(video.desc, 50)}
-                <ShowButton>Show more</ShowButton>
-                <ShowButton>Show less</ShowButton>
+                {showMore ? video.desc : excerpts(video.desc, 50)} {' '}
+                <ShowButton option={showMore} onClick={() => setShowMore(!showMore)}>
+                  Show {showMore ? 'less' : 'more'}
+                </ShowButton>
               </Description>
             </ChannelDetail>
           </ChannelInfo>
@@ -204,11 +205,11 @@ const Description = styled.p`
 
 const ShowButton = styled.button`
   border: none;
-  display: inline-block;
+  display: ${({ option }) => option ? 'block' : 'inline-block'};
   font-weight: 600;
-  text-transform: capitalize;
   background-color: transparent;
   color: ${({ theme }) => theme.textSoft};
+  margin-top: ${({ option }) => option && '1rem'};
   cursor: pointer;
 `;
 
