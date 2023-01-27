@@ -89,7 +89,7 @@ const Video = () => {
             <Image src={video.user?.img ?? userDefaultImg} alt='' />
             <ChannelDetail>
               <ChannelName>{video.user?.name}</ChannelName>
-              <ChannelCounter>{video.user?.subscribers} subscribers</ChannelCounter>
+              <ChannelCounter>{millify(video.user?.subscribers)} subscribers</ChannelCounter>
               <Description>
                 {showMore ? video.desc : excerpts(video.desc, 50)} {' '}
                 <ShowButton option={showMore} onClick={() => setShowMore(!showMore)}>
