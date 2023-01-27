@@ -95,7 +95,7 @@ const Video = () => {
                 {millify(video.user?.subscribers, { precision: 2 })} subscribers
               </ChannelCounter>
               <Description>
-                {showMore ? video.desc : excerpts(video?.desc, 50)} {' '}
+                {showMore ? video.desc : excerpts(video?.desc, 250)} {' '}
                 <ShowButton option={showMore} onClick={() => setShowMore(!showMore)}>
                   Show {showMore ? 'less' : 'more'}
                 </ShowButton>
