@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
 import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
@@ -25,6 +25,7 @@ import { setLogout } from 'features/user/userSlice';
 const Menu = ({ darkMode, setDarkMode }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { user } = useSelector((state) => ({ ...state.user }));
 
   const handleLogout = () => {
