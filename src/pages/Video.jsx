@@ -66,7 +66,7 @@ const Video = () => {
                 <ThumbUpIcon />
               ) : (
                 <ThumbUpOutlinedIcon />
-              )} {video.likes?.length}
+              )} {millify(video.likes?.length)}
             </Button>
             <Button onClick={handleDislike}>
               {video.dislikes?.includes(userId) ? (
