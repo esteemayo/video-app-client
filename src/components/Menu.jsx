@@ -70,7 +70,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           History
         </Item>
         <Hr />
-        {!user && (
+        {!user && pathname !== '/signin' && (
           <>
             <Login>
               Sign in to like videos, comment, and subscribe.
