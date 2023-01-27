@@ -1,3 +1,4 @@
+import millify from 'millify';
 import { format } from 'timeago.js';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
@@ -58,7 +59,7 @@ const Video = () => {
         </VideoWrapper>
         <Title>{video.title}</Title>
         <Details>
-          <Info>{video.views} views • {format(video.createdAt)}</Info>
+          <Info>{millify(video.views)} views • {format(video.createdAt)}</Info>
           <Buttons>
             <Button onClick={handleLike}>
               {video.likes?.includes(userId) ? (
