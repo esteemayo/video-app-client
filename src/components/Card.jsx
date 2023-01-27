@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { excerpts } from 'utils';
 import { getUser } from 'services/userService';
 
 const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
@@ -37,7 +38,7 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
             alt=''
           />
           <Texts>
-            <Title>{title}</Title>
+            <Title>{excerpts(title, 60)}</Title>
             <ChannelName>{channel?.name ?? user?.name}</ChannelName>
             <Info>{millify(views)} views • {format(createdAt)}</Info>
           </Texts>
