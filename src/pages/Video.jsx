@@ -1,15 +1,15 @@
-import millify from 'millify';
-import { format } from 'timeago.js';
 import styled from 'styled-components';
+import millify from 'millify';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { format } from 'timeago.js';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
+import { useDispatch, useSelector } from 'react-redux';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
-import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 
 import { excerpts } from 'utils';
 import userDefaultImg from 'img/user-default.jpg';
