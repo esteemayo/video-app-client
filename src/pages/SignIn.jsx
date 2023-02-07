@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { signInWithPopup } from 'firebase/auth';
+import { toast } from 'react-toastify';
 import { useEffect, useRef, useState } from 'react';
+import { signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getStorage,
