@@ -216,7 +216,7 @@ const ShowButton = styled.button`
   font-weight: 600;
   background-color: transparent;
   color: ${({ theme }) => theme.textSoft};
-  margin-top: ${({ option }) => option && '1rem'};
+  margin-top: ${({ opt }) => opt && '1rem'};
   cursor: pointer;
 `;
 
