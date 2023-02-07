@@ -10,6 +10,7 @@ import { getUser } from 'services/userService';
 
 const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
   const [channel, setChannel] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     (async () => {
