@@ -212,7 +212,7 @@ const Description = styled.p`
 
 const ShowButton = styled.button`
   border: none;
-  display: ${({ option }) => option ? 'block' : 'inline-block'};
+  display: ${({ opt }) => opt ? 'block' : 'inline-block'};
   font-weight: 600;
   background-color: transparent;
   color: ${({ theme }) => theme.textSoft};
