@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
   const navigate = useNavigate();
