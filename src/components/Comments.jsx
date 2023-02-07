@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 import Comment from './Comment';
 import userDefaultImg from 'img/user-default.jpg';
