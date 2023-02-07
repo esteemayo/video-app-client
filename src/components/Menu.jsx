@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
+import HomeIcon from '@mui/icons-material/Home';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
-import LibraryMusicOutlinedIcon from '@mui/icons-material/LibraryMusicOutlined';
+import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+import LibraryMusicOutlinedIcon from '@mui/icons-material/LibraryMusicOutlined';
 import SportsBasketballOutlinedIcon from '@mui/icons-material/SportsBasketballOutlined';
 import MovieOutlinedIcon from '@mui/icons-material/MovieOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
