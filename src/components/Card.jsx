@@ -28,6 +28,10 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
   return (
     <Link to={`/video/${slug}`} style={{ textDecoration: 'none' }}>
       <Container type={type}>
+        <Wrapper
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
         <Image
           type={type}
           src={imgUrl}
