@@ -65,7 +65,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  position: relative;  
+  position: relative;
 `;
 
 const Image = styled.img`
