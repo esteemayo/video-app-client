@@ -96,7 +96,7 @@ const Video = () => {
               </ChannelCounter>
               <Description>
                 {showMore ? video.desc : excerpts(video?.desc, 250)} {' '}
-                <ShowButton option={showMore} onClick={() => setShowMore(!showMore)}>
+                <ShowButton opt={showMore} onClick={() => setShowMore(!showMore)}>
                   Show {showMore ? 'less' : 'more'}
                 </ShowButton>
               </Description>
