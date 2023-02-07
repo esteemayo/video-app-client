@@ -58,6 +58,10 @@ const Container = styled.div`
   cursor: pointer;
 `;
 
+const Wrapper = styled.div`
+  position: relative;  
+`;
+
 const Image = styled.img`
   width: 100%;
   height: ${({ type }) => type === 'sm' ? '12rem' : '20.2rem'};
