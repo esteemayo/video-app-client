@@ -12,10 +12,10 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
 import { excerpts } from 'utils';
-import Comments from 'components/Comments';
 import userDefaultImg from 'img/user-default.jpg';
-import Recommendation from 'components/Recommendation';
+import Comments from 'components/Comments';
 import { subscription, unsubscribe } from 'features/user/userSlice';
+import Recommendation from 'components/Recommendation';
 import { dislikeVideo, fetchVideo, likeVideo, updateViews } from 'features/video/videoSlice';
 
 const Video = () => {
