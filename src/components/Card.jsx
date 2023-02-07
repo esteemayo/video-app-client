@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { excerpts } from 'utils';
+import videoUrl from 'img/video.mp4';
 import { getUser } from 'services/userService';
 
 const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
