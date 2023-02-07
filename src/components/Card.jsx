@@ -37,6 +37,8 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
           src={imgUrl}
           alt=''
         />
+          {isHovered && <Video src={videoUrl} autoPlay={true} loop />}
+        </Wrapper>
         <Details type={type}>
           <ChannelImage
             type={type}
