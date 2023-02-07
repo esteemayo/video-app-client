@@ -1,3 +1,4 @@
+import storage from 'redux-persist/lib/storage';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -9,7 +10,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 import userReducer from 'features/user/userSlice';
 import videoReducer from 'features/video/videoSlice';
@@ -39,4 +39,4 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
-export {persistor, store };
+export { persistor, store };
