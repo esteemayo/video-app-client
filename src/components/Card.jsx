@@ -69,6 +69,16 @@ const Image = styled.img`
   flex: 1;
 `;
 
+const Video = styled.video`
+  width: 100%;
+  height: ${({ type }) => type === 'sm' ? '12rem' : '20.2rem'};
+  object-fit: cover;
+  flex: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+`;
+
 const Details = styled.div`
   display: flex;
   margin-top: ${({ type }) => type !== 'sm' && '1.6rem'};
