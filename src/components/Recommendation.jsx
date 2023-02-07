@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Card from './Card';
