@@ -102,7 +102,7 @@ const Video = () => {
               </Description>
             </ChannelDetail>
           </ChannelInfo>
-          {userId !== video.user._id && (
+          {userId !== video.user?._id && (
             <Subscribe onClick={() => user ? handleSubscribe(video.user?._id) : null}>
               {user?.subscribedUsers?.includes(video.user?._id)
                 ? 'SUBSCRIBED'
