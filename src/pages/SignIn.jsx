@@ -12,8 +12,8 @@ import {
 } from 'firebase/storage';
 
 import app from '../firebase';
-import { auth, provider } from '../firebase';
 import { googleSignIn, loginUser, registerUser, reset } from 'features/user/userSlice';
+import { auth, provider } from '../firebase';
 
 const SignIn = () => {
   const navigate = useNavigate();
