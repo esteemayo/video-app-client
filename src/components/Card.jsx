@@ -1,7 +1,7 @@
-import millify from 'millify';
-import { format } from 'timeago.js';
 import styled from 'styled-components';
+import millify from 'millify';
 import { Link } from 'react-router-dom';
+import { format } from 'timeago.js';
 import { useEffect, useState } from 'react';
 
 import { excerpts } from 'utils';
