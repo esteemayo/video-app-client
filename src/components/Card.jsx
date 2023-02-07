@@ -32,11 +32,11 @@ const Card = ({ slug, type, user, views, title, imgUrl, createdAt }) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-        <Image
-          type={type}
-          src={imgUrl}
-          alt=''
-        />
+          <Image
+            type={type}
+            src={imgUrl}
+            alt=''
+          />
           {isHovered && <Video src={videoUrl} autoPlay={true} loop />}
         </Wrapper>
         <Details type={type}>
