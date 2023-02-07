@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
+import { Link } from 'react-router-dom';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
 
 import Search from './Search';
 import Upload from './Upload';
