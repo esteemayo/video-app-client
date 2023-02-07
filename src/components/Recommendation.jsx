@@ -15,7 +15,8 @@ const Recommendation = ({ tags, videoId }) => {
 
   return (
     <Container>
-      {recommendedVideos?.filter((item) => item._id !== videoId)
+      {recommendedVideos
+        ?.filter((item) => item._id !== videoId)
         .map((item) => {
           return <Card key={item._id} {...item} type='sm' />
         })
