@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Card from './Card';
 import { fetchRecommendedVideos } from 'features/video/videoSlice';
 
-const Recommendation = ({ tags }) => {
+const Recommendation = ({ tags, videoId }) => {
   const dispatch = useDispatch();
   const { recommendedVideos } = useSelector((state) => ({ ...state.video }));
 
