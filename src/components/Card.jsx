@@ -89,8 +89,8 @@ const Video = styled.video`
   object-fit: cover;
   flex: 1;
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
 `;
 
 const Details = styled.div`
