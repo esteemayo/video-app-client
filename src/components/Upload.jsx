@@ -75,11 +75,16 @@ const Upload = ({ onClose }) => {
     };
 
     try {
-      const { data } = await createVideo({ ...newVideo });
+      const { token } = axios.CancelToken.source();
+      const { data } = await createVideo({ ...newVideo }, token);
       onClose(true);
       navigate(`/video/${data.video.slug}`);
     } catch (err) {
-      console.log(err);
+      if (axios.isCancel(err)) {
+        console.log('cancelled');
+      } else {
+        console.log(err);
+      }
     }
   };
 
