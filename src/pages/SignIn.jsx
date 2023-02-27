@@ -13,7 +13,7 @@ import {
 
 import app from '../firebase';
 import { googleSignIn, loginUser, registerUser, reset } from 'features/user/userSlice';
-import { registerInputs } from 'data';
+import { registerInputs } from 'formData';
 import { auth, provider } from '../firebase';
 
 const SignIn = () => {
