@@ -36,7 +36,8 @@ const Home = ({ type }) => {
 
   useEffect(() => {
     isError && toast.error(isError);
-  }, [isError]);
+    return () => dispatch(reset());
+  }, [isError, dispatch]);
 
   return (
     <Container>
