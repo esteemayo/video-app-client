@@ -156,6 +156,7 @@ const SignIn = () => {
           </ProgressBar>
         )}
         {registerInputs.map((input) => {
+          const { id, name, type, placeholder } = input;
           return (
             <Input
               type='text'
