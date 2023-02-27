@@ -160,30 +160,6 @@ const SignIn = () => {
           placeholder='name'
           onChange={handleChange}
         />
-        <Input
-          type='text'
-          name='username'
-          placeholder='username'
-          onChange={handleChange}
-        />
-        <Input
-          type='email'
-          name='email'
-          placeholder='email'
-          onChange={handleChange}
-        />
-        <Input
-          type='password'
-          name='password'
-          placeholder='password'
-          onChange={handleChange}
-        />
-        <Input
-          type='password'
-          name='passwordConfirm'
-          placeholder='confirm password'
-          onChange={handleChange}
-        />
         <Button
           disabled={perc > 0 && perc < 100}
           onClick={handleRegister}
