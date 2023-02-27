@@ -159,9 +159,10 @@ const SignIn = () => {
           const { id, name, type, placeholder } = input;
           return (
             <Input
-              type='text'
-              name='name'
-              placeholder='name'
+              key={id}
+              type={type}
+              name={name}
+              placeholder={placeholder}
               onChange={handleChange}
             />
           );
