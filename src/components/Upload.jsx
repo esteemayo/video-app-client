@@ -10,7 +10,6 @@ import {
 
 import app from '../firebase';
 import { createVideo } from 'services/videoService';
-import axios from 'axios';
 
 const Upload = ({ onClose }) => {
   const navigate = useNavigate();
