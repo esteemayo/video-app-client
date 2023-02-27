@@ -32,7 +32,6 @@ const Home = ({ type }) => {
       default:
         break;
     };
-
   }, [dispatch, type]);
 
   useEffect(() => {
