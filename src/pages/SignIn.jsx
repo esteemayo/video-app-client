@@ -115,7 +115,7 @@ const SignIn = () => {
   useEffect(() => {
     user && isSuccess && navigate('/');
     isError && toast.error(isError);
-    dispatch(reset());
+    return () => dispatch(reset());
   }, [user, isError, isSuccess, navigate, dispatch]);
 
   return (
