@@ -45,6 +45,7 @@ const Video = () => {
 
   useEffect(() => {
     dispatch(fetchVideo(slug));
+    return () => dispatch(reset());
   }, [slug, dispatch]);
 
   useEffect(() => {
