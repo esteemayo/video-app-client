@@ -73,9 +73,13 @@ const Upload = ({ onClose }) => {
       tags,
     };
 
-    const { data } = await createVideo({ ...newVideo });
-    onClose(true);
-    navigate(`/video/${data.video.slug}`);
+    try {
+      const { data } = await createVideo({ ...newVideo });
+      onClose(true);
+      navigate(`/video/${data.video.slug}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
