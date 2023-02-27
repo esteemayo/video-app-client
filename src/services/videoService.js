@@ -29,7 +29,8 @@ export const getVideoById = (videoId) => http.get(videoUrl(videoId));
 export const getVideoBySlug = (slug) =>
   http.get(`${apiEndpoint}/details/${slug}`);
 
-export const createVideo = (video, token) => http.post(apiEndpoint, video, { cancelToken: token });
+export const createVideo = (video, token) =>
+  http.post(apiEndpoint, video, { cancelToken: token });
 
 export const createCommentOnVideo = (videoId, comment) =>
   http.post(`${videoUrl(videoId)}/comments`, comment);
