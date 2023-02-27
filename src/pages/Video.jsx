@@ -16,7 +16,13 @@ import userDefaultImg from 'img/user-default.jpg';
 import Comments from 'components/Comments';
 import { subscription, unsubscribe } from 'features/user/userSlice';
 import Recommendation from 'components/Recommendation';
-import { dislikeVideo, fetchVideo, likeVideo, reset, updateViews } from 'features/video/videoSlice';
+import {
+  dislikeVideo,
+  fetchVideo,
+  likeVideo,
+  reset,
+  updateViews,
+} from 'features/video/videoSlice';
 
 const Video = () => {
   const { slug } = useParams();
