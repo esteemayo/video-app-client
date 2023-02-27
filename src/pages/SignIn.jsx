@@ -155,12 +155,16 @@ const SignIn = () => {
             </Filler>
           </ProgressBar>
         )}
-        <Input
-          type='text'
-          name='name'
-          placeholder='name'
-          onChange={handleChange}
-        />
+        {registerInputs.map((input) => {
+          return (
+            <Input
+              type='text'
+              name='name'
+              placeholder='name'
+              onChange={handleChange}
+            />
+          );
+        })}
         <Button
           disabled={perc > 0 && perc < 100}
           onClick={handleRegister}
