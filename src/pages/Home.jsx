@@ -33,7 +33,6 @@ const Home = ({ type }) => {
         break;
     };
 
-    return () => dispatch(reset());
   }, [dispatch, type]);
 
   useEffect(() => {
